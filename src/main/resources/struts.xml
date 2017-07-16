@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+     <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+     <!-- 将action对象交给spring管理 -->
+     <constant name="struts.objectFactory" value="spring"/>
+     <!-- 设置允许最大值  200MB(1024*1024*200) -->  
+     <constant name="struts.multipart.maxSize" value="20971520" /> 
+     <!-- 设置该应用使用的编码集为utf-8 -->
+     <constant name="struts.i18n.encoding" value="utf-8"/>
+     <package name="mainPackage" extends="struts-default">     
+	     <interceptors>
+	         <interceptor name="editUserInterceptor" class="com.wanda.interceptor.EditUserInterceptor"></interceptor>
+	     </interceptors>  
+	     
+	     <global-results>
+		     <result name="error">WEB-INF/page/error.jsp</result>
+		     <result name="unauthorized">unauthorized.jsp</result>		     
+	     </global-results>
+	     <global-exception-mappings>
+		     <exception-mapping  exception="java.lang.Exception" result="error"></exception-mapping>    
+	     </global-exception-mappings>
+	     
+        <action name="operateUser_*" class="OperateUser" method="{1}">
+            <result name="inputLogin">login.jsp</result>
+            <result name="register">register.jsp</result>
+            <result name="showUserList">WEB-INF/page/showUserList.jsp</result> 
+            <result name="delete" type="chain">operateUser_searchUserByPage</result>                    
+            <result name="update" type="chain">operateUser_searchUserByPage</result>
+            <result name="content" type="chain">operateUser_searchUserByContent</result>
+            <result name="input">WEB-INF/page/editUser.jsp</result>                  
+	        <interceptor-ref name="editUserInterceptor">
+	            <param name="includeMethods">updateUser</param>
+	        </interceptor-ref>
+	        <interceptor-ref name="defaultStack" />
+        </action>
+        
+        <action name="userRegister_*" class="UserRegister" method="{1}">
+            <result name="success">login.jsp</result>
+            <result name="input">register.jsp</result>
+            <result name="add"  type="chain">operateUser_searchUserByPage</result>
+        </action>
+        
+        <action name="userLogin_*" class="UserLogin" method="{1}">
+            <result name="success">index.jsp</result>
+            <result name="logout">index.jsp</result>
+            <result name="input">login.jsp</result>
+            <result name="manageInput">manageLogin.jsp</result>
+            <result name="manage">manage.jsp</result>
+            <result name="manageFrame" type="chain">commonAction_showSolutionList</result>
+        </action>
+                
+        <action name="searchSolution_*" class="SearchSolution" method="{1}">
+            <result name="homePage" type="chain">commonAction_lastSolutions</result>       
+            <result name="searchResult">searchResult.jsp</result>
+            <result name="showSolution">showSolutionDetail.jsp</result>  
+            <result name="solutionListResult">WEB-INF/page/showSolutionList.jsp</result>
+            <result name="searchResult_manage">WEB-INF/page/showSolutionList.jsp</result>
+            <result name="searchResult_frame">WEB-INF/page/solutionFrame.jsp</result>
+        </action>        
+        <action name="searchDrawing_*" class="SearchDrawing" method="{1}">
+            <result name="drawingListResult">WEB-INF/page/showDrawingList.jsp</result>       
+            <result name="showDrawing">showDrawingDetail.jsp</result>  
+        </action>
+        <action name="searchHouse_*" class="SearchHouse" method="{1}">
+            <result name="showHouseList">WEB-INF/page/showHouseList.jsp</result>       
+            <result name="showHouseDetail">showHouseDetail.jsp</result>  
+        </action>
+        <action name="searchTrainingMaterial_*" class="SearchTrainingMaterial" method="{1}">
+            <result name="showTMList">WEB-INF/page/showTrainingMaterialList.jsp</result>
+            <result name="trainingMaterial_frame">WEB-INF/page/trainingMaterialsFrame.jsp</result>
+        </action>
+        <action name="searchSignMaterial_*" class="SearchSignMaterial" method="{1}">
+            <result name="showSMList">WEB-INF/page/showSignMaterialsList.jsp</result>       
+            <result name="signMaterial_frame">WEB-INF/page/signMaterialsFrame.jsp</result>       
+        </action>
+        <action name="searchCategory_*" class="SearchCategory" method="{1}">
+            <result name="showCategoryList">WEB-INF/page/showCategoryList.jsp</result>       
+        </action>
+        <action name="operateSolution_*" class="OperateSolution" method="{1}">
+            <result name="page" type="chain">searchSolution_searchSolutionByPage</result>               
+            <result name="content" type="chain">searchSolution_searchSolutionByContent</result>             
+        </action>        
+        <action name="operateDrawing_*" class="OperateDrawing" method="{1}">
+            <result name="page" type="chain">searchDrawing_searchDrawingByPage</result>                
+            <result name="content" type="chain">searchDrawing</result>               
+        </action>        
+        <action name="operateHouse_*" class="OperateHouse" method="{1}">
+            <result name="page" type="chain">searchHouse_searchHouseByPage</result>               
+            <result name="content" type="chain">searchHouse</result>                
+        </action>
+        <action name="operateTrainingMaterial_*" class="OperateTrainingMaterial" method="{1}">
+            <result name="page" type="chain">searchTrainingMaterial_searchTMByPage</result>               
+            <result name="content" type="chain">searchTrainingMaterial_searchTMBycontent</result>                
+        </action>
+        <action name="operateSignMaterial_*" class="operateSignMaterial" method="{1}">
+            <result name="page" type="chain">searchSignMaterial_searchSMByPage</result>               
+            <result name="content" type="chain">searchSignMaterial_searchSMBycontent</result>                
+        </action>
+        <action name="operateCategory_*" class="OperateCategory" method="{1}">
+            <result name="page" type="chain">searchCategory_searchCategoryByPage</result>               
+            <result name="content" type="chain">searchCategory_searchCategoryBycontent</result>                
+        </action>        
+        <action name="commonAction_*" class="CommonAction" method="{1}">
+            <result name="showSolutionList">WEB-INF/page/showSolutionList.jsp</result>  
+            <result name="showDrawingList">WEB-INF/page/showDrawingList.jsp</result>  
+            <result name="uploadSolution">WEB-INF/page/upLoadSolution.jsp</result>   
+            <result name="uploadDrawing">upLoadDrawing.jsp</result>   
+            <result name="updateSolution">WEB-INF/page/updateSolution.jsp</result> 
+            <result name="updateDrawing">updateDrawing.jsp</result> 
+            <result name="showUserList">WEB-INF/page/showUserList.jsp</result> 
+            <result name="editUser">WEB-INF/page/editUser.jsp</result>   
+            <result name="addUser">WEB-INF/page/addUser.jsp</result>     
+            <result name="showQRDrawingDetail">showQRDrawingDetail.jsp</result>     
+            <result name="showQRString">showQRString.jsp</result>  
+            <result name="input">index.jsp</result>
+            <result name="showHouseList">WEB-INF/page/showHouseList.jsp</result>            
+            <result name="uploadHouse">upLoadHouse.jsp</result>            
+            <result name="updateHouse">updateHouse.jsp</result>            
+            <result name="searchSystem">searchResult.jsp</result> 
+            <result name="noAuthority" type="chain">operateUser_searchUserByPage</result>               
+            <result name="manage">manage.jsp</result>               
+            <result name="manageLogin">manageLogin.jsp</result>                       
+            <result name="lastTrainingMaterials">WEB-INF/page/lastTrainingMaterials.jsp</result>                       
+            <result name="lastSignMaterials">WEB-INF/page/lastSignMaterials.jsp</result>  
+            <result name="lastSolutions">WEB-INF/page/lastSolutions.jsp</result>
+            <result name="lastSolutions_mobile">WEB-INF/page_mobile/lastSolutions_mobile.jsp</result>
+            <result name="showTrainingMaterialDetail">WEB-INF/page/showTrainingMaterialDetail.jsp</result>
+            <result name="showTrainingMaterialList">WEB-INF/page/showTrainingMaterialList.jsp</result>                       
+            <result name="uploadTrainingMaterial">WEB-INF/page/upLoadTrainingmaterial.jsp</result>                       
+            <result name="updateTrainingMaterial">WEB-INF/page/updateTrainingMaterial.jsp</result>                       
+            <result name="showCategoryList">WEB-INF/page/showCategoryList.jsp</result>                       
+            <result name="uploadCategory">WEB-INF/page/uploadCategory.jsp</result>                       
+            <result name="updateCategory">WEB-INF/page/updateCategory.jsp</result>                       
+            <result name="showSignMaterialsList">WEB-INF/page/showSignMaterialsList.jsp</result>                       
+            <result name="showSignMaterialDetail">WEB-INF/page/showSignMaterialDetail.jsp</result>                       
+            <result name="uploadSignMaterial">WEB-INF/page/uploadSignMaterial.jsp</result>                       
+            <result name="updateSignMaterial">WEB-INF/page/updateSignMaterial.jsp</result>                       
+        </action>
+        
+        <action name="uploadUtilAction_*" class="UploadUtilAction" method="{1}">
+            <param name="savePath">E:\apache_tomcat_7.0.57\webapps</param>
+            <!-- <param name="allowedTypes"></param> 允许文件类型 -->  
+           <interceptor-ref name="fileUpload">  
+               <param name="maximumSize">1024*1024*40</param>  
+           </interceptor-ref>  
+           <interceptor-ref name="defaultStack" />            
+        </action>
+        
+        <action name="downUtilAction_*" class="DownUtilAction" method="{1}">         
+          <!-- 配置结果类型为stream的结果 -->
+          <result name="success" type="stream">
+             <param name="contentType">application/application/octet-stream;charset=utf-8</param> 
+             <!-- 自动去找Action中的getInputStream方法 -->
+             <param name="inputName">inputStream</param> 
+             <!-- 将调用该Action中的getFileName方法。  -->
+             <param name="contentDisposition">attachment;filename="${fileName}"</param> 
+             <param name="bufferSize">4096</param> 
+          </result>
+        </action>
+    </package>
+    
+    <!-- 异步操作 -->
+    <constant name="struts.il8n.encoding" value="UTF-8"></constant>
+    <package name="ajaxpackage" extends="json-default">        
+        <action name="userRegisterAjax" class="UserRegisterAjax">
+            <result type="json">
+                <param name="noCache">true</param>
+                <!-- 需要序列化的属性 -->
+                <param name="root">nameResult</param>
+            </result>
+        </action>
+        <action name="operateUserAjax_*" class="OperateUserAjax" method="{1}">
+            <result name="resetPassword" type="json">
+                <param name="noCache">true</param>
+                <!-- 需要序列化的属性 -->
+                <param name="root">resetPasswordResult</param>
+            </result>
+        </action>         
+    </package>    
+    
+</struts>

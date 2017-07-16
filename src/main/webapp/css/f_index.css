@@ -1,0 +1,164 @@
+/*全局CSS定义*/
+body { font-family:微软雅黑, arial;margin:0; padding:0; background: #FFF; font-size:14px; color:#FFF;}
+div,form,img,ul,ol,li,dl,dt,dd {margin: 0; padding: 0; border: 0; }
+li{list-style-type:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6 { margin:0; padding:0;font-size:12px; font-weight:normal;}
+
+a:link { color: #FFFCF7;text-decoration:none;}
+a:visited {color: #FFFCF7;text-decoration:none; ;}
+a:hover {text-decoration:underline;}
+a:active {color: #FFFCF7; ;}
+
+body{
+	background-color: #123;
+   background-image: url(../image/findex/ibg.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+   
+    
+	
+}
+div{
+	display: block;
+}
+
+.head{
+	width:1000px ;
+	height: 123px;
+	margin: 0 auto;
+}
+#top_logo{
+	position:absolute;
+	width: 800px;
+	height: 40px;
+	top: 20px;
+	margin-left: 30px;
+	height: ;
+	
+	
+	
+}
+.login_button{
+	color: #FFFCF7;
+	margin-left: 800px;
+	position: absolute;
+	top: 27px;
+	
+}
+.login_message{
+	color: #FFFCF7;
+	margin-left: 700px;
+	position: absolute;
+	top: 27px;
+	display: block;
+}
+.login_message a{
+	color: #FFFCF7;
+	
+}
+.welcome{
+	margin-right: 10px;
+	
+}
+
+#userimg{
+	margin-top: -3px;
+	margin-right: 3px;
+}
+#outimg{
+	margin-top: -2px;
+	margin-right: 5px;
+}
+.logout{
+	margin-right: 5px;
+}
+.top_banner{
+	background-color:#1a1f45;
+	width: 1000px;
+	height: 77px;
+	position: absolute;
+	margin-top: 60px;
+	float: left;
+	
+	
+}
+.switch{
+	width: 1000px;
+    float: left;
+    position: absolute;
+    margin-left: 90px;
+    margin-top: 30px;
+    z-index: 99;
+    font-family: 微软雅黑;
+    
+}
+ ul li{
+	float: left;
+    text-align: center;
+    position: relative;
+    height: 32px;
+    padding-left: 20px;
+    width: 98px;
+}
+
+.container{
+	width: 1000px;
+	margin: 0 auto;
+	height: 600px;
+	
+}
+#Sliper{
+	background: #EEEEEE;
+	opacity: 0.5;
+	width: 40px;
+	height: 200px;
+	border-radius: 15px;
+	position: fixed;
+	margin-top:-190px;
+	margin-left: 960px;
+	
+}
+#C{
+	
+	display: inline;
+	/*width: 1000px;
+	margin: 0 auto;*/
+	overflow-x:hidden;
+}
+/*#Ch{
+	margin-left: 1000px;
+	margin-top:150px;
+}*/
+#Ch{
+	position: fixed;
+	margin-top:-370px;
+	margin-left: 660px;
+	/*display: none;*/
+	width: 345px ;
+	height: 365px ;
+	background-image: url(../image/findex/ch.png);
+	background-repeat: no-repeat;
+	text-align: center;
+}
+
+	
+.ch_connect{
+	margin-top: 247px;
+	margin-left: 45px;
+}
+#lxrimg{
+	margin-top: -8px;
+	padding-bottom: 20px;
+}
+#ewmimg{
+	margin-top: -7px;
+	padding-left: 80px;
+}
+#lb_Img{
+	display: inline;
+	margin-left: -15px;
+	margin-top: 415px;
+	
+}
+

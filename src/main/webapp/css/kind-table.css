@@ -1,0 +1,17 @@
+.section{
+	margin: 20px auto;
+}
+#Se{
+	margin-left: 45px;
+	font-size: 14px;
+}
+.top_flower{
+	z-index: 2;
+}
+.table_content{
+	left:50%;
+	margin-top: 20px;
+	width: 1000px;
+	height: 300px;
+	text-align: center;
+}

@@ -1,0 +1,92 @@
+.upload{
+	
+	height: 40px;
+	width: 300px;
+	margin: 40px auto;
+	margin-bottom: 0px;
+	text-align: center;
+}
+.choose{
+	display: inline;
+	
+	
+}
+#Ch{
+	background-color: #C9DEFD;
+	padding: 4px 4px;
+	
+}
+ button{
+	background-image: url(../image/);
+	font-size: 14px;
+}
+.nochoose{
+	color: black;
+	font-size: 14px;
+	display: inline;
+	margin-left: 10px;
+}
+.up{
+	margin-left: 10px;
+	display: inline;
+}
+.content{
+	/*width: 600px;*/
+	margin-top: 30px;
+	height: 300px;
+	text-align: center;
+}
+.title{
+	font-size: 18px;
+	margin: 50px auto;
+	
+}
+#txtTltle{
+	width: 560px;
+	height: 30px;
+	border: solid 2px #C3C3C3;
+	background-image: url('../image/problem/pbgre2.jpg') ;
+	text-indent: 5px;
+}
+.other{
+	margin-bottom: 50px;
+	font-size: 18px;
+	margin: 0 auto;
+}
+.sec{
+	font-size: 14px;
+	height: 30px;
+	margin-bottom: 15px;
+}
+.down{
+	height: 30px;
+}
+
+#Sec{
+	height: 25px;
+	font-size: 14px;
+}
+.kind{
+	font-size: 14px;
+	height: 30px;
+	margin-bottom: 20px;
+}
+.kind label{
+	margin-left: 10px;
+}
+#Kind{
+	font-size: 12px;
+}
+.checkup{
+	margin-top: 35px;
+}
+.checkup_button{
+	
+	border-color: #828282;
+    border-radius: 16px;
+	background-color: #828282;
+	border-width: 3px;
+	padding:4px 10px ;
+	margin-left: 30px;
+}
+

@@ -1,0 +1,18 @@
+.left h2{
+	height: 36px;
+	padding-left: 
+	50px;padding-top: 25px;
+	color: #000;
+	font-weight: normal;
+	font-size: 18px;
+}
+.hovertree{
+	margin-left: 6px;
+	opacity: 0.9;
+}
+.sub{
+	margin-right:10px; 
+	color:#000000;
+	font-size: 14px;
+}
+

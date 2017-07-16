@@ -1,0 +1,199 @@
+/*全局CSS定义*/
+body { font-family:微软雅黑, arial;margin:0; padding:0; background: #FFF; font-size:14px; color:#FFF;}
+div,form,img,ul,ol,li,dl,dt,dd {margin: 0; padding: 0; border: 0; }
+li{list-style-type:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6 { margin:0; padding:0;font-size:12px; font-weight:normal;}
+
+a:link { color: #FFFCF7;text-decoration:none;}
+a:visited {color: #FFFCF7;text-decoration:none; ;}
+a:hover {text-decoration:underline;}
+a:active {color: #FFFCF7; ;}
+.big_logo{
+	
+	text-align: center;
+	margin-top: 20px;
+}
+.top_weibo{
+	position: absolute;
+	top: 100px;
+	width: 100%;
+	height: 50px;
+	background-color: #1A1F45;
+	overflow: hidden;
+	/*text-align: center;*/
+	
+}
+.login_banner{
+	width: 600px;
+	height: 40px;
+	margin: 0 auto;
+	margin-top: 13px;
+	text-align: left;
+	vertical-align: middle;
+}
+.wei{
+	
+	display: inline;
+	margin-right: 10px;
+	vertical-align: middle;
+	}
+#wb{
+	width:18px;
+	height: 18px;
+	
+
+}
+.top_weibo h2{
+	display: inline;
+	font-size: 16px;
+	
+	
+}
+.page_box{
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 200px;
+	text-align: center;
+}
+
+#LoginBox {
+	margin: 0 auto;
+	width: 500px;
+	height: 350px;
+	z-index: 10000;
+}
+
+.all_row{
+	width: 500px;
+	margin: -30px auto;
+	margin-left: 20px;
+}
+.row {
+	height: 35px;
+	width: 500px;
+	line-height: 27px;
+	font-family:  "微软雅黑";
+	font-size: 14px;
+	padding-bottom: 40px;
+	color: #404040;
+	text-align: left;
+		
+}
+
+
+
+.inputBox {
+	height: 35px;
+	padding: 1px 3px 6px 3px;
+	margin-left: 5px;
+	width: 700px;
+	
+}
+
+#userName {
+	height: 35px;
+	width: 300px;
+	text-indent: 5px;
+	
+}
+
+#password {
+	height: 35px;
+	width: 300px;
+	text-indent: 5px;
+}
+.row_check{
+	width: 500px;
+	height: 35px;
+	text-align: left;
+	padding-bottom: 40px;
+	font-family:  "微软雅黑";
+	font-size: 14px;
+	color: #404040;
+}
+#vcode{
+	height: 35px;
+	width: 200px;
+	text-indent: 5px;
+	display: inline;
+}
+#code{
+	height: 35px;
+	width: 130px;
+	background-color: #1A1F45;
+	cursor:pointer;
+	float: right;
+	margin-right: 80px;
+	/*margin-top:3px ;*/
+	color:#ffffff;
+	font-size:20px;
+	text-align: center;
+	padding-top: 5px;
+}
+
+.login_submit{
+	height: 40px;
+	text-align: left;
+	padding-left: 28px;
+	width: 480px;
+}
+
+#loginBtn {
+	color: White;
+	background: #1a1f45;
+	text-decoration: none;
+	padding: 10px 35px;
+	margin-left: 40px;
+	width: 87px;
+	height: 27px;
+	
+}
+#registerBtn {
+	color: White;
+	background: #1a1f45;
+	text-decoration: none;
+	padding: 10px 35px;
+	margin-left: 40px;
+	width: 87px;
+	height: 27px;
+	
+}
+.warning1{
+	float: right;
+	color: #FF0000;
+	margin-right:116px;
+	margin-top: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	display: none;
+}
+.remember{
+	float: right;
+	margin-top: 8px;
+	margin-right: 5px;
+}
+.warning2{
+	float: right;
+	color: #FF0000;
+	margin-right:33px;
+	margin-top: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	display: none;
+}
+.foot{
+	color: #000;
+	width: inherit;
+	text-align: center;
+	font-size: 12px;
+	margin: 0 auto;
+	
+	
+	
+}
+
+#copy{
+	padding-bottom: 10px;
+	
+}

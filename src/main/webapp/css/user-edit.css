@@ -1,0 +1,48 @@
+.content{
+	margin-top: 150px;
+	text-align: center;
+	height: 400px;
+}
+.left{
+	
+	float: left;
+	margin-left: 100px;
+}
+.le{
+	float: left;
+	margin-left: 70px;
+	text-align: left;
+}
+#sta{
+	margin-top: 25px;
+}
+.ri{
+	float:left;
+	margin-left: 20px;
+	text-align: left;
+	
+}
+#Bumen{
+	margin-top: 23px;
+}
+.right{
+	float: right;
+	margin-right: 140px;
+}
+.checkup_button{
+	border-color:#1A1F45;
+	background-color: #1A1F45;
+	border-width: 3px;
+	padding:5px 12px ;
+	margin-left: 30px;
+}
+.checkup{
+	
+	width: 730px;
+	margin: 0 auto;
+	margin-top: -40px;
+	text-align: left;
+}
+.checkup a{
+	color: #FFFCF7;
+}

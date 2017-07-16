@@ -1,0 +1,73 @@
+
+.content{
+	/*width: 600px;*/
+	margin-top: 150px;
+	height: 150px;
+	text-align: center;
+}
+.title{
+	font-size: 18px;
+	margin: 20px auto;
+	
+}
+#txtTltle{
+	width: 360px;
+	height: 20px;
+	border: solid 2px #C3C3C3;
+	background-image: url('../image/problem/pbgre2.jpg') ;
+	text-indent: 5px;
+}
+.other{
+	margin-bottom: 50px;
+	font-size: 18px;
+	margin: 0 auto;
+}
+.section{
+	text-align: left;
+	margin: 20px auto;
+	width: 430px;
+	font-size: 18px;
+}
+#Sec{
+	font-size: 14px;
+	height: 25px;
+	margin-left: 17px;
+	margin-bottom: 15px;
+}
+.sec{
+	font-size: 16px;
+	height: 30px;
+	margin-bottom: 15px;
+}
+#sta{
+	margin-left: 60px;
+}
+.down{
+	height: 30px;
+}
+
+.kind{
+	font-size: 14px;
+	height: 30px;
+	margin-bottom: 20px;
+}
+.kind label{
+	margin-left: 10px;
+}
+#Kind{
+	font-size: 12px;
+}
+.checkup{
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+.checkup_button{
+	
+	border-color: #828282;
+    border-radius: 16px;
+	background-color: #828282;
+	border-width: 3px;
+	padding:4px 10px ;
+	margin-left: 30px;
+}
+

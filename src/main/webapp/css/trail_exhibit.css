@@ -1,0 +1,91 @@
+.ppt_panel{
+	width: 1000px;
+	height: auto;
+	text-align: center;
+	
+}
+
+
+.ppt_content{
+	width: 917px;
+	margin: 0 auto;
+	min-height: 500px;
+	
+}
+.top_flower{
+	position: absolute;
+	margin-left: -500px; 
+	margin-top: -50px;
+	float: left;
+	opacity: 0.8;
+	z-index: -1;
+}
+
+.ppt_t{
+	margin-top: 20px;
+	width: inherit;
+	color: #000;
+	font-size: 20px;
+	text-align: center;
+}
+#ppt_T{
+	font-size: 20px;
+	display: inline;
+	font-weight: bold;
+	
+}
+.ppt_title{
+	font-size: 20px;
+	display: inline;
+	font-weight: bold;
+	
+}
+.ppt_other{
+	padding-top: 8px;
+	width: inherit;
+	text-align:center;
+	margin: 0 auto;
+	
+}
+.ppt_other h2{
+	display: inline;
+	font-size: 14px;
+	color: #000;
+}
+.ppt_othcon{
+	display: inline;
+	font-size: 14px;
+	color: #000;
+}
+.ppt_push{
+	padding-top: 8px;
+	width: 450px;
+	text-align: center;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	
+}
+.ppt_push h2{
+	display: inline;
+	font-size: 14px;
+	color: #000;
+}
+#ppt_Time{
+	margin-left: 10px;
+}
+
+.ppt_con{
+	width: 896px;
+	height: 600px;
+	background-color: #C3C3C3;
+	margin: 0 auto;
+	z-index: 1000;
+}
+.foot_copy{
+	width: 750px;
+	height: 40px;
+	margin: 0 auto;
+	text-align: center;
+	color: #000000;
+	font-size: 12px;
+}

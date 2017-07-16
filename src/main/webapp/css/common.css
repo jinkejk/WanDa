@@ -1,0 +1,49 @@
+body { font-family:微软雅黑, arial;margin:0; padding:0;  font-size:14px; color:#000;}
+div,form,img,ul,ol,li,dl,dt,dd,button{margin: 0; padding: 0; border: 0; }
+li{list-style-type:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6 { margin:0; padding:0;font-size:12px; font-weight:normal;}
+
+a:link { color: #000000;text-decoration:none;}
+a:visited {color: #000;text-decoration:none; ;}
+a:hover {text-decoration:underline;}
+a:active {color: #000; }
+body{
+	
+    /*background-image: url('../image/problem/pbgre2.jpg') ;*/
+   background-color: #C3C3C3;
+    
+}
+#bg{
+	width: 1000px;
+	background-image: url('../image/problem/pbgre2.jpg') ;
+	margin: 0 auto;
+	overflow: hidden;
+	z-index: -1000;
+	
+	
+}
+.contain{
+	width: 1000px;
+	position:absolute;
+	margin: 0 auto;
+	background-image: url('../image/problem/pbgre2.jpg') ;
+	height: auto;
+	text-align: center;
+	z-index: -30;
+}
+.top_flower{
+	position: absolute;
+	z-index: -1;
+	margin-left: -499px; 
+	margin-top: -59px;
+	float: left;
+	opacity: 0.8;
+}
+.foot{
+	color: #000;
+	text-align: center;
+	font-size: 12px;
+	margin-top: 100px;
+	/*margin: 0 auto;*/
+}

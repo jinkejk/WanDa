@@ -1,0 +1,10 @@
+.mainFrame{
+	border:0px;
+	width: 1000px;
+	min-height: 900px;
+	background-image: url('../image/problem/pbgre2.jpg');
+	
+}
+.search{
+	float: right;
+}

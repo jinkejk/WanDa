@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	 <context:annotation-config/>
+	 
+	 <!-- 自动扫描bean -->
+	 <context:component-scan base-package="com.wanda"></context:component-scan>
+	 
+	 <!-- hibernate 的数据源 -->
+	 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	    <property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
+	    <property name="url" value="jdbc:mysql://localhost:3306/wanda?useUnicode=true&amp;characterEncoding=UTF-8"/>
+	    <property name="username" value="root"/>
+	    <property name="password" value="123456"/>
+	     <!-- 连接池启动时的初始值 -->
+		 <property name="initialSize" value="2"/>
+		 <!-- 连接池的最大值 -->
+		 <property name="maxActive" value="20"/>
+		 <!-- 最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止 -->
+		 <property name="maxIdle" value="5"/>
+		 <!--  最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接，以免洪峰来时来不及申请 -->
+		 <property name="minIdle" value="2"/>
+	  </bean>	  
+	
+	<!-- hibernate的配置 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+	     <property name="dataSource" ref="dataSource"/>
+		<!-- 包扫描的方式加载注解类 -->
+        <property name="packagesToScan">
+            <list>
+                <value>com.wanda.beans</value>
+            </list>
+        </property>
+	     <property name="hibernateProperties">
+		    <value>
+		        hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+		        hibernate.hbm2ddl.auto=update
+		        hibernate.show_sql=true
+		        hibernate.format_sql=false
+		        hibernate.cache.use_second_level_cache=false
+		        hibernate.cache.region.factory_class=org.hibernate.cache.ehcache.EhCacheRegionFactory
+       	        hibernate.cache.use_query_cache=false
+        	    hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+        	    <!-- 数据库批量查询最大数 -->
+                hibernate.jdbc.fetch_size=50
+                <!-- 数据库批量更新、添加、删除操作最大数 -->
+                hibernate.jdbc.batch_size=50
+                <!-- 创建session方式 hibernate4.x 的方式 -->
+                hibernate.current_session_context_class=org.springframework.orm.hibernate4.SpringSessionContext
+		      </value>
+	     </property>
+	</bean>
+	
+	<!-- 把hibernate交给spring的事务管理器 -->
+	<bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+	  	<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+    <!-- shiro自定义Realm -->
+	<bean id="myRealm" class="com.wanda.realm.MyRealm"/>
+    
+	<!-- shiro安全管理器 -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">  
+  	  <property name="realm" ref="myRealm"/>
+	</bean>  
+	
+	<!-- Shiro过滤器 -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">  
+	    <!-- Shiro的核心安全接口,这个属性是必须的 -->  
+	    <property name="securityManager" ref="securityManager"/>
+	    <!-- 身份认证失败，则跳转到登录页面的配置 -->  
+	    <property name="loginUrl" value="/login.jsp"/>
+	    <!-- 权限认证失败，则跳转到指定页面 -->  
+	    <property name="unauthorizedUrl" value="unauthorized.jsp"/>  
+	    <!-- Shiro连接约束配置,即过滤链的定义 -->  
+	    <property name="filterChainDefinitions">  
+	        <value>  
+	            /login.jsp=anon
+	            /operateUser_searchUserByPage*=perms["showUser"]            
+	            /operateUser_deleteUserById*=perms["deleteUser"]            
+	            /operateUser_updateUser*=perms["editorUser"]            
+	            /operateUser_changeLogFlag*=perms["verifyUser"]            
+	            /userRegister_addUser*=perms["addUser"]            
+	            /operateSolution_updateSolution*=perms["editSolution"]
+	            /operateSolution_uploadSolution*=perms["addSolution"]
+	            /operateSolution_deleteSolutionById*=perms["deleteSolution"]
+	            /searchSolution_searchSolutionByPage*=perms["showSolution"]
+	            /commonAction_showSolutionList*=perms["showSolution"]
+	            /commonAction_updateSolution*=perms["editSolution"]
+	            /commonAction_showUserList*=perms["showUser"]
+	            /commonAction_editUser*=perms["editorUser"]
+	            /commonAction_addUser*=perms["addUser"]          
+	            /commonAction_showDrawingList*=perms["showDrawing"]          
+	            /commonAction_uploadDrawing*=perms["addDrawing"]          
+	            /commonAction_updateDrawing*=perms["editDrawing"]          
+	            /operateDrawing_deleteDrawingById*=perms["deleteDrawing"]          
+                /commonAction_uploadHouse*=perms["addHouse"]
+                /commonAction_updateHouse*=perms["editHouse"]
+                /operateHouse_deleteHouseById*=perms["deleteHouse"]
+                /commonAction_searchSystem*=authc
+                /commonAction_showHouseList*=authc
+                /commonAction_lastTrainingMaterial*=authc
+                /commonAction_showCategoryList*=authc
+                /commonAction_lastSignMaterial*=authc
+                /commonAction_lastSolutions*=authc
+                /commonAction_uploadTrainingMaterial*=perms["addTM"]
+                /commonAction_showTrainingMaterialList*=perms["showTM"]
+                /operateTrainingMaterial_deleteTMById*=perms["deleteTM"]
+                /commonAction_updateTrainingMaterial*=perms["editTM"]
+                /commonAction_uploadSignMaterial*=perms["addSM"]
+                /downUtilAction?filePath\=/signMaterial*=perms["downloadSM"]
+                /commonAction_updateSignMaterial*=perms["editSM"]
+                /operateSignMaterial_deleteSMById*=perms["deleteSM"]
+                /searchCategory_searchCategoryByModule*=perms["showCategory"]
+                /commonAction_uploadCategory*=perms["addCategory"]
+                /commonAction_updateCategory*=perms["editCategory"]
+                /operateCategory_deleteCategoryById*=perms["deleteCategory"]
+	        </value>  
+	    </property>
+	</bean>  
+	
+	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->  
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+	
+	<!--配置使shiro注解起作用的bean，需要放在 lifecycleBeanPostProcessor后面   
+  	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>  
+  		<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">  
+  	  <property name="securityManager" ref="securityManager"/>  
+    </bean>
+    -->
+    
+	<!-- 打开事务注解的管理器 -->
+	<tx:annotation-driven transaction-manager="txManager"/>		   
+    
+</beans>
