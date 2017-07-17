@@ -1,5 +1,7 @@
 package com.wanda.action;
 
+import java.io.IOException;
+import java.rmi.server.ServerCloneException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -7,8 +9,10 @@ import java.util.List;
 import java.util.Set;
 import javax.annotation.Resource;
 
+import com.wanda.util.IsMobile;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
+import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.ActionContext;
@@ -126,7 +130,7 @@ public class SearchSignMaterial extends ActionSupport{
 	/**
 	 * 按照内容分页搜索签批资料
 	 */
-	public String searchSMBycontent(){
+	public String searchSMBycontent() throws IOException {
 		//设置默认值
 		if(pageSize == 0 || currentPage ==0){
 			pageSize = 5;
@@ -179,7 +183,12 @@ public class SearchSignMaterial extends ActionSupport{
 		ActionContext.getContext().put("totalPage", totalPage);
 		ActionContext.getContext().put("titleList", titleList);
 
-		return flag==1? "signMaterial_frame":"showSMList";
+		if(IsMobile.check(ServletActionContext.getRequest())){
+			//手机端
+			return "showSMList_mobile";
+		}else{
+			return flag==1? "signMaterial_frame":"showSMList";
+		}
 	}
 
 	/**

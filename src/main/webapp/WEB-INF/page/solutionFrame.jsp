@@ -64,7 +64,7 @@
 				                        <a href="searchSolution_searchSolutionById?solutionId=${solution.solutionId}" target="_blank">${titleList[status.index]}</a>
 				                    </div>
 					                <div class="rp_item2">
-					                    <span id="Subkind">${solution.category.TMCName}</span><span id="Subkind">${solution.category.parentTMC.TMCName}</span><span id="Subkind">${fn:substring(solution.createDate,0,10)}<img class="new_img" src="image/problem/new3.png"/>
+					                    <span class="Subkind">${solution.category.TMCName}</span><span class="Subkind">${solution.category.parentTMC.TMCName}</span><span class="Subkind2">${fn:substring(solution.createDate,0,10)}<img class="new_img" src="image/problem/new3.png"/>
 					                    </span>
 					                </div>
 			                    </li>							

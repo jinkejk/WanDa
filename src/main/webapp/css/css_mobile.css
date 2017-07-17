@@ -403,8 +403,12 @@ a:hover{
 .zx_l2{
 	width: 15%;
 	float:left;
-	margin-left: 5%;
+	margin-left: 3%;
 	color:#000;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	-o-text-overflow:ellipsis;
 }
 .z_rm1{
 	width: 80%;

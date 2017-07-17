@@ -79,8 +79,8 @@
 						<c:if test="${trainingMaterials.size() > 0}">
 						<c:forEach var="trainingMaterial" items="${trainingMaterials}" varStatus="status">
                             <li><div class="rp_title2"><a href="commonAction_showTrainingMaterialDetail?TMId=${trainingMaterial.TMId}" target="_blank" >${titleList[status.index]}</a></div>            
-                                <div class="rp_item2"><span id="Subkind">${trainingMaterial.category.parentTMC.TMCName}</span><span id="Subkind">${trainingMaterial.category.TMCName}</span>
-                                    <span id="Subkind">${fn:substring(trainingMaterial.createDate,0,10)}<img class="new_img" src="image/problem/new3.png"/></span></div>
+                                <div class="rp_item2"><span class="Subkind">${trainingMaterial.category.parentTMC.TMCName}</span><span class="Subkind">${trainingMaterial.category.TMCName}</span>
+                                    <span class="Subkind2">${fn:substring(trainingMaterial.createDate,0,10)}<img class="new_img" src="image/problem/new3.png"/></span></div>
                             </li>
                         </c:forEach>
                         </c:if>

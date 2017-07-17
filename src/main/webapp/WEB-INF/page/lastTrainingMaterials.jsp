@@ -160,8 +160,8 @@
 						<c:if test="${lastTrainingMaterials.size() > 0}">
 						<c:forEach var="lastTrainingMaterial" items="${lastTrainingMaterials}" varStatus="status">
                             <li><div class="rp_title2"><a href="commonAction_showTrainingMaterialDetail?TMId=${lastTrainingMaterial.TMId}" target="_blank" >${lastTrainingMaterial.title}</a></div>            
-                                <div class="rp_item2"><span id="Subkind">${lastTrainingMaterial.category.parentTMC.TMCName}</span><span id="Subkind">${lastTrainingMaterial.category.TMCName}</span>
-                                    <span id="Subkind">${fn:substring(lastTrainingMaterial.createDate,0,10)}<img class="new_img" src="image/problem/new3.png"/></span></div>
+                                <div class="rp_item2"><span class="Subkind">${lastTrainingMaterial.category.parentTMC.TMCName}</span><span class="Subkind">${lastTrainingMaterial.category.TMCName}</span>
+                                    <span class="Subkind2">${fn:substring(lastTrainingMaterial.createDate,0,10)}<img class="new_img" src="image/problem/new3.png"/></span></div>
                             </li>
                         </c:forEach>
                         </c:if>

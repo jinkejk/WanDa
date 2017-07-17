@@ -54,8 +54,10 @@
                 
         <action name="searchSolution_*" class="SearchSolution" method="{1}">
             <result name="homePage" type="chain">commonAction_lastSolutions</result>       
-            <result name="searchResult">searchResult.jsp</result>
-            <result name="showSolution">showSolutionDetail.jsp</result>  
+            <result name="searchResult">WEB-INF/page/searchResult.jsp</result>
+            <result name="searchResult_mobile">WEB-INF/page_mobile/searchResult_mobile.jsp</result>
+            <result name="showSolution">showSolutionDetail.jsp</result>
+            <result name="showSolution_mobile">showSolutionDetail_mobile.jsp</result>
             <result name="solutionListResult">WEB-INF/page/showSolutionList.jsp</result>
             <result name="searchResult_manage">WEB-INF/page/showSolutionList.jsp</result>
             <result name="searchResult_frame">WEB-INF/page/solutionFrame.jsp</result>
@@ -74,7 +76,8 @@
         </action>
         <action name="searchSignMaterial_*" class="SearchSignMaterial" method="{1}">
             <result name="showSMList">WEB-INF/page/showSignMaterialsList.jsp</result>       
-            <result name="signMaterial_frame">WEB-INF/page/signMaterialsFrame.jsp</result>       
+            <result name="showSMList_mobile">WEB-INF/page_mobile/lastSignMaterials_mobile.jsp</result>
+            <result name="signMaterial_frame">WEB-INF/page/signMaterialsFrame.jsp</result>
         </action>
         <action name="searchCategory_*" class="SearchCategory" method="{1}">
             <result name="showCategoryList">WEB-INF/page/showCategoryList.jsp</result>       
@@ -124,7 +127,9 @@
             <result name="manage">manage.jsp</result>               
             <result name="manageLogin">manageLogin.jsp</result>                       
             <result name="lastTrainingMaterials">WEB-INF/page/lastTrainingMaterials.jsp</result>                       
-            <result name="lastSignMaterials">WEB-INF/page/lastSignMaterials.jsp</result>  
+            <result name="lastTrainingMaterials_mobile">WEB-INF/page_mobile/lastTrainingMaterials_mobile.jsp</result>
+            <result name="lastSignMaterials">WEB-INF/page/lastSignMaterials.jsp</result>
+            <result name="lastSignMaterials_mobile">WEB-INF/page_mobile/lastSignMaterials_mobile.jsp</result>
             <result name="lastSolutions">WEB-INF/page/lastSolutions.jsp</result>
             <result name="lastSolutions_mobile">WEB-INF/page_mobile/lastSolutions_mobile.jsp</result>
             <result name="showTrainingMaterialDetail">WEB-INF/page/showTrainingMaterialDetail.jsp</result>

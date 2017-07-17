@@ -105,6 +105,7 @@ public class DownUtilAction extends ActionSupport {
 				out.print("exist");
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
+				out.print("error_path");
 				return null;
 			}
 		} catch (IOException e) {

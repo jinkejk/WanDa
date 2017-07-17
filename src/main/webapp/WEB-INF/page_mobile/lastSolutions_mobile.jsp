@@ -15,7 +15,7 @@
 <body>
 <div class="z_main">
     <div class="z_center">
-        <div class="z_top"><a href="" class="z_topl"></a> 问题档案库</div>
+        <div class="z_top"><a href="javascript:window.history.back();" class="z_topl"></a> 问题档案库</div>
         <div class="wrapper02" id="demo06">
             <div class="scroller">
                 <ul class="clearfix">
@@ -28,26 +28,11 @@
                 </ul>
             </div>
         </div>
+
+        <%--生成一级目录--%>
         <div class="z_ba">
-            <ul>
-                <li><a href="searchSolution_searchSolutionByCategory?flag=1&pageSize=15&TMCId=38&currentPage=1">
-                    <div class="z_ba1"><img src="image/mobile/w1.png"></div>
-                    <div class="z_ba2">成本</div>
-                </a></li>
-                <li><a href="searchSolution_searchSolutionByCategory?flag=1&pageSize=15&TMCId=39&currentPage=1">
-                    <div class="z_ba1"><img src="image/mobile/w2.png"></div>
-                    <div class="z_ba2">工程</div>
-                </a></li>
-                <li><a href="searchSolution_searchSolutionByCategory?flag=1&pageSize=15&TMCId=40&currentPage=1">
-                    <div class="z_ba1"><img src="image/mobile/w3.png"></div>
-                    <div class="z_ba2">设计</div>
-                </a></li>
-                <li><a href="searchSolution_searchSolutionByCategory?flag=1&pageSize=15&TMCId=41&currentPage=1">
-                    <div class="z_ba1"><img src="image/mobile/w4.png"></div>
-                    <div class="z_ba2">物管</div>
-                </a></li>
-
-
+            <ul id="menu_ul">
+                <%--js动态生成目录--%>
             </ul>
         </div>
 
@@ -76,7 +61,12 @@
                                         <a href="searchSolution_searchSolutionById?solutionId=${solution.solutionId}"
                                            target="_blank" style="color: #000">${solution.title}</a>
                                     </div>
-                                    <div class="zx_l2">${solution.category.TMCName}</div>
+                                    <div class="zx_l2">
+                                        <c:if test="${!empty solution.category.parentTMC}">
+                                            ${solution.category.parentTMC.TMCName}
+                                        </c:if><c:if test="${empty solution.category.parentTMC}">
+                                        ${solution.category.TMCName}
+                                    </c:if></div>
                                     <div class="x_r1"><span class="zx_r2">New</span> <span
                                             class="zx_r22">${fn:substring(solution.createDate,0,10)}</span></div>
                                 </li>
@@ -104,7 +94,7 @@
                             <c:forEach var="solution" items="${hotVisitSolution}" varStatus="status">
                                 <li>
                                     <a href="searchSolution_searchSolutionById?solutionId=${solution.solutionId}"
-                                       target="_blank" class="z_rm1">${solution.title}</a>
+                                       class="z_rm1">${solution.title}</a>
                                     <span class="z_rm2">${solution.clickNum}</span>
                                 </li>
                             </c:forEach>
@@ -144,7 +134,6 @@
 <script type="text/javascript" src="js/mobile/navbarscroll.js"></script>
 <script type="text/javascript">
     $(function () {
-
         //demo示例六 通过id调取
         $('#demo06').navbarscroll({
             defaultSelect: 1,
@@ -154,21 +143,16 @@
                 console.log(obj.text())
             }
         });
+
+        //动态生成目录
+        var contents = '';
+        $.each(${firstLevelTMC}, function (index, firstLevel) {
+            contents += "<li><a href='searchSolution_searchSolutionByCategory?flag=1&pageSize=15&TMCId=" +
+                firstLevel.TMCId + "&currentPage=1'><div class='z_ba1'><img src='image/mobile/w"+(index+1)+".png'></div>" +
+                "<div class='z_ba2'>"+firstLevel.TMCName+"</div></a></li>"
+        });
+        $("#menu_ul").append(contents);
     });
-
-    //点击菜单事件
-    function menuClick(TMCName) {
-        alert(TMCName);
-        if (TMCName == '成本')
-            window.location.href = "searchSolution_searchSolutionByCategory?flag=1&pageSize=15&TMCId=38&currentPage=1";
-        else if (TMCName == '工程')
-            window.location.href = "searchSolution_searchSolutionByCategory?flag=1&pageSize=15&TMCId=39&currentPage=1";
-        else if (TMCName == '设计')
-            window.location.href = "searchSolution_searchSolutionByCategory?flag=1&pageSize=15&TMCId=40&currentPage=1";
-        else if (TMCName == '物管')
-            window.location.href = "searchSolution_searchSolutionByCategory?flag=1&pageSize=15&TMCId=41&currentPage=1";
-
-    }
 </script>
 </body>
 

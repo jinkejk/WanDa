@@ -67,6 +67,10 @@
 				    		alert('下载出错！');
 			                return;	    		
 				    	}
+                        if(datas == "error_path"){
+                            alert('路径配置错误！');
+                            return;
+                        }
 				    	if(datas == "exist"){
 				    		window.location.href = "downUtilAction?filePath=/signMaterial&fileName="+signFile;
 				    	}

@@ -766,7 +766,7 @@ public class CommonAction extends ActionSupport{
 	 * 跳转到前台签批资料页面
 	 * 默认查找最新的num条记录
 	 */
-	public String lastSignMaterial(){
+	public String lastSignMaterial() throws IOException{
 		int num = 6;
 
 		//查找最新的num条记录
@@ -787,7 +787,7 @@ public class CommonAction extends ActionSupport{
 		ActionContext.getContext().put("secondLevelTMC", UtilCommon.listToJson(secondLevelTMC));
 		ActionContext.getContext().put("lastSignMaterials", lastSignMaterials);
 
-		return "lastSignMaterials";
+		return IsMobile.check(ServletActionContext.getRequest())? "lastSignMaterials_mobile":"lastSignMaterials";
 	}
 
 	/**

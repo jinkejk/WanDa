@@ -312,18 +312,25 @@ ul li{
 	display: inline;
 	float: left;
 	margin-right: 20px;
-	text-overflow: ellipsis;
-	overflow: hidden;
 	white-space: nowrap;
-	width: 300px;
-	
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 50%;
 }
 .rp_item2{
 	display: inline;
 	float: right;
 }
-#Subkind{
+.Subkind{
+	width: 80px;
+	float: left;
 	margin-left: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.Subkind2{
+	float: right;
 }
 .rp_title{
 	/*display: inline; */
@@ -334,8 +341,8 @@ ul li{
 	display: block;
 	overflow: hidden;
 	white-space: nowrap;
-	
-	
+
+
 }
 .rp_item{
 	display: inline;
@@ -344,7 +351,7 @@ ul li{
 	margin-top: 2px;
 	padding-top: 6px;
 	padding-left: 6px;
-	background: url('../image/problem/lbg.png') ; 
+	background: url('../image/problem/lbg.png') ;
 	width: 650px;
 	height: 30px;
 	font-size: 14px;

@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="WanDa:war exploded">
-    <output-path>$PROJECT_DIR$/target/WanDa</output-path>
+    <output-path>H:/tomcat8.5/webapps/WanDa/</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
