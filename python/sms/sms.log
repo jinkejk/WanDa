@@ -1,0 +1,46 @@
+AT+CSCS="GSM"
+
+OK
++CMG
+F=1AT+CMGS="153702058
+Initial the pool
+Initial the pool finished
+Initial the pool
+Initial the pool finished
+Initial the pool
+Initial the pool finished
+Initial the pool
+Initial the pool finished
+Initial the pool
+Initial the pool finished
+Initial the pool
+Initial the pool finished
+Initial the pool
+Initial the pool finished
+Initial the pool
+Initial the pool finished
+Begin to check sms console
+Sms port is None
+Cannot find sms port
+Initial the pool
+Initial the pool finished
+Begin to check sms console
+Sms port is None
+Cannot find sms port
+Initial the pool
+Initial the pool finished
+Begin to check sms console
+Sms port is None
+Cannot find sms console
+Initial the pool
+Initial the pool finished
+Begin to check sms console
+Sms port is COM7
+Initial the pool
+Initial the pool finished
+Begin to check sms console
+Sms port is COM7
+Initial the pool
+Initial the pool finished
+Begin to check sms console
+Sms port is COM7
