@@ -737,7 +737,7 @@ public class CommonAction extends ActionSupport{
 	 * 跳转到前台培训资料页面
 	 * 默认查找最新的num条记录
 	 */
-	public String lastTrainingMaterial(){
+	public String lastTrainingMaterial() throws IOException {
 		int num = 10;
 
 		//查找最新的num条记录
@@ -759,7 +759,7 @@ public class CommonAction extends ActionSupport{
 		ActionContext.getContext().put("secondLevelTMC", UtilCommon.listToJson(secondLevelTMC));
 		ActionContext.getContext().put("lastTrainingMaterials", lastTrainingMaterials);
 
-		return "lastTrainingMaterials";
+		return IsMobile.check(ServletActionContext.getRequest())? "lastTrainingMaterials_mobile":"lastTrainingMaterials";
 	}
 
 	/**
@@ -828,7 +828,7 @@ public class CommonAction extends ActionSupport{
 	/**
 	 * 跳转到显示详细信息页面
 	 */
-	public String showTrainingMaterialDetail(){
+	public String showTrainingMaterialDetail() throws IOException{
 		//获取当前用户
 		Subject subject = SecurityUtils.getSubject();
 		String loginName = (String) subject.getPrincipal();
@@ -847,7 +847,7 @@ public class CommonAction extends ActionSupport{
 		}
 
 		ActionContext.getContext().put("trainingMaterial", trainingMaterial);
-		return "showTrainingMaterialDetail";
+		return IsMobile.check(ServletActionContext.getRequest())? "showTrainingMaterialDetail_mobile":"showTrainingMaterialDetail";
 	}
 
 	/**

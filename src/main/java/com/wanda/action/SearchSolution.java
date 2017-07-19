@@ -119,16 +119,23 @@ public class SearchSolution extends ActionSupport {
 		User user = userService.getUserByLoginName(loginName);
 
 		//获得总共的文章数目
-		int solutionTotalNum = solutionService.getTotalSolutionNumByContent(searchContent).intValue();		
-		
-		//计算总页数
-		int totalPage = (int)Math.ceil((double)solutionTotalNum/pageSize);
-		
-		if(currentPage > totalPage)
-			currentPage = totalPage;
-		
-		//分页获得文章并增加一条搜索记录
-		List<Solution> solutions = solutionService.getSolutionByContentByPage(user, searchContent, pageSize, currentPage, isNewContent);
+
+		int solutionTotalNum = 0;
+		int totalPage = 0;
+		List<Solution> solutions = null;
+		try {
+			solutionTotalNum = solutionService.getTotalSolutionNumByContent(searchContent).intValue();
+			//计算总页数
+			totalPage = (int)Math.ceil((double)solutionTotalNum/pageSize);
+
+			if(currentPage > totalPage)
+                currentPage = totalPage;
+
+			//分页获得文章并增加一条搜索记录
+			solutions = solutionService.getSolutionByContentByPage(user, searchContent, pageSize, currentPage, isNewContent);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 
 		//设置标题长度，以及对相关字标红

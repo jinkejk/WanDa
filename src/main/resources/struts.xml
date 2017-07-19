@@ -73,11 +73,13 @@
         <action name="searchTrainingMaterial_*" class="SearchTrainingMaterial" method="{1}">
             <result name="showTMList">WEB-INF/page/showTrainingMaterialList.jsp</result>
             <result name="trainingMaterial_frame">WEB-INF/page/trainingMaterialsFrame.jsp</result>
+            <result name="lastTrainingMaterials_mobile">WEB-INF/page_mobile/lastTrainingMaterials_mobile.jsp</result>
         </action>
         <action name="searchSignMaterial_*" class="SearchSignMaterial" method="{1}">
             <result name="showSMList">WEB-INF/page/showSignMaterialsList.jsp</result>       
             <result name="showSMList_mobile">WEB-INF/page_mobile/lastSignMaterials_mobile.jsp</result>
             <result name="signMaterial_frame">WEB-INF/page/signMaterialsFrame.jsp</result>
+            <result name="lastSignMaterials_mobile">WEB-INF/page_mobile/lastSignMaterials_mobile.jsp</result>
         </action>
         <action name="searchCategory_*" class="SearchCategory" method="{1}">
             <result name="showCategoryList">WEB-INF/page/showCategoryList.jsp</result>       
@@ -133,7 +135,8 @@
             <result name="lastSolutions">WEB-INF/page/lastSolutions.jsp</result>
             <result name="lastSolutions_mobile">WEB-INF/page_mobile/lastSolutions_mobile.jsp</result>
             <result name="showTrainingMaterialDetail">WEB-INF/page/showTrainingMaterialDetail.jsp</result>
-            <result name="showTrainingMaterialList">WEB-INF/page/showTrainingMaterialList.jsp</result>                       
+            <result name="showTrainingMaterialDetail_mobile">WEB-INF/page_mobile/showTrainingMaterialDetail_mobile.jsp</result>
+            <result name="showTrainingMaterialList">WEB-INF/page/showTrainingMaterialList.jsp</result>
             <result name="uploadTrainingMaterial">WEB-INF/page/upLoadTrainingmaterial.jsp</result>                       
             <result name="updateTrainingMaterial">WEB-INF/page/updateTrainingMaterial.jsp</result>                       
             <result name="showCategoryList">WEB-INF/page/showCategoryList.jsp</result>                       

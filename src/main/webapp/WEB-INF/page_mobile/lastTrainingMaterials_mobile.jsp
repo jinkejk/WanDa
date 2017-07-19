@@ -1,196 +1,132 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
-      
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8"  http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>培训资料</title>
-	    <link rel="stylesheet" type="text/css" href="css/pub.css" />
-		<link rel="stylesheet" href="css/sub_trail.css" />
-	    <link href="css/jquery.hovertree.0.1.2.min.css" type="text/css" rel="Stylesheet" />
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery.hovertree.0.1.2.min.js"></script>
-		<script type="text/javascript">
-		$(document).ready(function(){
-			  var contents = '';
-			  var flag = 0;//判断是否存在子分类
-			  //动态生成左边的目录
-				$.each(${firstLevelTMC}, function(index, firstLevel){
-					//动态生成一级目录
-					contents += "<div><h3><b></b><a href='#' onclick='menuClick("+firstLevel.TMCId+")'>"+firstLevel.TMCName+"</a></h3>";
-					
-					$.each(${secondLevelTMC}, function(index,secondLevel){
-						if(secondLevel.parentTMC.TMCId==firstLevel.TMCId){
-							if(flag == 0){
-								contents += "<ul>";
-								flag = 1;
-							}
-						    contents += "<li><a class='sub' href='#' onclick='menuClick("+secondLevel.TMCId+")'>"+secondLevel.TMCName+"</a></li>";						
-						}
-					});
-					if(flag == 1)
-						contents += "</ul>";
-					contents += "</div>";
-					flag = 0;
-				});
-			  //alert(contents);
-				$("#keleyihovertree").append(contents);
-				$(".hovertree a").css("font-size","14px" );
-				$(".hovertree a").css("color","#000" );
-				$("#keleyihovertree").hovertree({ "width": "157px", "initStatus": 'close'});
-		});
-		//点击菜单事件
-		function menuClick(TMCId){
-			$("#right_Panel").hide();
-			$("#right_b1").hide();
-			$("#right_b2").hide();
-			$("#mainFrame").attr("src","searchTrainingMaterial_searchTrainingMaterialsByCategory?pageSize=${pageSize}&TMCId="+TMCId+"&currentPage=1");
-			$("#mainFrame").show();		
-		}
-		
-		//初始化iframe高度
-		function setIframeHeight(iframe) {
-			if (iframe) {
-			var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
-			if (iframeWin.document.body) {
-			iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
-			}
-			}
-		};
-		
-		//点击搜索按钮
-		function search(){
-			if($("#searchContent").val()==''){
-				alert('无搜索内容！');
-				return;
-			}
-			$("#right_Panel").hide();
-			$("#right_b1").hide();
-			$("#right_b2").hide();
-			$("#mainFrame").attr("src","searchTrainingMaterial_searchTMBycontent?flag=1&pageSize=${pageSize}&searchContent="+$("#searchContent").val()+"&currentPage=1");
-			$("#mainFrame").show();
-		}
-		
-		//监听回车事件
-        document.onkeydown=keyDownSearch;
-        function keyDownSearch(e) {    
-            // 兼容FF和IE和Opera    
-            var theEvent = e || window.event;    
-            var code = theEvent.keyCode || theEvent.which || theEvent.charCode;    
-            if (code == 13) {    
-           	 $("#search").click();    
-                return false;    
-            }    
-            return true;    
-      } 
-    </script>
-	</head>
 
-	<body>
-		
-		<div id="bg">
-			<!--导航以及头部登录和logo-->
-		<div class="head">
-			<!--无锡万达城销售物业研发平台-->
-			<div id="top_logo">
-			<a href="index.jsp"><img  src="image/problem/tlogo.png"  /></a>
-			</div>
-			<span class="login_message">
-			<span class="welcome"><img id="userimg" src="image/problem/user.png"/>欢迎：<span class="username" id="Username"><shiro:principal/></span></span>
-			<span class="logout"><img id="outimg" src="image/problem/out.png"/><a href="userLogin_logout">退出</a></span>
-			</span>
-			<div class="top_banner">
-			<!--导航-->
-			    <ul class="switch">
-						<li class="switch_li"><a href="#">产品研发大事记</a></li>
-						<li class="switch_li"><a href="commonAction_lastSolutions">问题档案库</a></li>
-						<li class="switch_li"><a href="#">图纸二维码</a></li>	
-						<li class="switch_li" style="margin-top: -40px;text-align: center;"><img src="image/findex/bannerlogo.png"></li>
-						<li class="switch_li" style="margin-left:110px "><a href="commonAction_lastSignMaterial">签批资料</a></li>
-						<li class="switch_li"><a href="commonAction_lastTrainingMaterial">培训资料</a></li>
-						<li class="switch_li"><a href="http://app.connect.trimble.com" target="_blank">BIM</a></li>
-				</ul>
-			</div>
-		</div>
-			<!--页面内容-->
-		<div class="contain">
-			<div id="contents" class="contents">
-			<!--左边导航-->
-			<div class="left" id="lefth">
-			<!--左边分类-->
-			<div class="left_kind">
-			<h2>培训资料</h2>
-			<!-- 菜单树 -->
-			<div id="keleyihovertree" class="hovertree" ></div>
-			<!--左下图片 -->
-			<div class="left_img" id="left_Img">
-				<img  src="image/problem/zximg.png" />
-			</div>
-			</div>
-			
-			</div>
-				<div class="right" id="righth">
-						<!--上面花朵-->
-					<img class="top_flower"  src="image/problem/tflower.png" />
-					<!--右边头部-->
-					<div class="right_banner">
-							<div class="new_document" id="new_Document">
-								<img  id="new_Img" src="image/problem/bnew2.jpg">
-							</div>
-							
-							<div id="right_Search">
-								<input type="text" class="search_border" id="searchContent" name="searchContent">
-								<input type="button" value="搜索" id="search" onclick="search()" class="search_submit" >
-							</div>
-							
-							
-					</div>
-					<!--右边内容-->
-					<div class="right_content" id="right_Content">
-					<!--右边内容上框-->
-					<div class="right_b1" id="right_b1">
-					<img src="image/problem/tborder.png">
-					</div>
-					<!--右边内容-->
-					<div class="right_panel" id="right_Panel">					
-						<ul id="Rh2">
-						<c:if test="${lastTrainingMaterials.size() > 0}">
-						<c:forEach var="lastTrainingMaterial" items="${lastTrainingMaterials}" varStatus="status">
-                            <li><div class="rp_title2"><a href="commonAction_showTrainingMaterialDetail?TMId=${lastTrainingMaterial.TMId}" target="_blank" >${lastTrainingMaterial.title}</a></div>            
-                                <div class="rp_item2"><span id="Subkind">${lastTrainingMaterial.category.parentTMC.TMCName}</span><span id="Subkind">${lastTrainingMaterial.category.TMCName}</span>
-                                    <span id="Subkind">${fn:substring(lastTrainingMaterial.createDate,0,10)}<img class="new_img" src="image/problem/new3.png"/></span></div>
-                            </li>
-                        </c:forEach>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>培训资料</title>
+    <link rel="stylesheet" href="css/css_mobile.css">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
+</head>
+
+<body>
+<div class="z_main">
+    <div class="z_center">
+        <div class="z_top"><a href="" class="z_topl"></a> 资料培训</div>
+        <div class="wrapper02" id="demo06">
+            <div class="scroller">
+                <ul class="clearfix">
+                    <li><a href="javascript:void(0)">产品研发大事记</a></li>
+                    <li><a href="commonAction_lastSolutions">问题档案库</a></li>
+                    <li><a href="javascript:void(0)">图纸二维码</a></li>
+                    <li><a href="commonAction_lastSignMaterial">签批材料</a></li>
+                    <li><a href="commonAction_lastTrainingMaterial">培训材料</a></li>
+                    <li><a href="http://app.connect.trimble.com" target="_blank">BIM</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="z_ba">
+            <ul id="menu_ul">
+                <%--动态读取目录--%>
+            </ul>
+        </div>
+
+        <div class="z_list">
+            <div class="z_list1"><img src="image/mobile/jian.png"></div>
+            <div class="z_list2">
+                <div class="z_list21">新增资料通知
+                    <form action="searchTrainingMaterial_searchTMBycontent" onsubmit="return checkForm()">
+                        <input type="submit" id="z_topn">
+                        <input type="hidden" name="pageSize" value="${pageSize}">
+                        <input type="hidden" name="currentPage" value="1">
+                        <label for="z_topn" class="z_topn1"><img src="image/mobile/ss.png"></label>
+                        <input type="text" class="z_topn2" value="${searchContent}"
+                               id="searchContent" name="searchContent"
+                               onfocus="if(value=='请输入你要搜索的内容') {value=''}"
+                               onblur="if (value=='') {value='请输入你要搜索的内容'}">
+                    </form>
+                </div>
+
+                <div class="z_list22">
+                    <ul>
+                        <c:if test="${lastTrainingMaterials.size() > 0}">
+                            <c:forEach var="lastTrainingMaterial" items="${lastTrainingMaterials}" varStatus="status">
+                                <li>
+                                    <div class="z_l1"><a
+                                            href="commonAction_showTrainingMaterialDetail?TMId=${lastTrainingMaterial.TMId}"
+                                            style="color: #000;">
+                                        <c:if test="${!empty titleList}">${titleList[status.index]}</c:if>
+                                        <c:if test="${empty titleList}">${lastTrainingMaterial.title}</c:if></a>
+                                    </div>
+                                    <div class="zx_l2">
+                                        <c:if test="${!empty lastTrainingMaterial.category.parentTMC}">
+                                            ${lastTrainingMaterial.category.parentTMC.TMCName}
+                                        </c:if><c:if test="${empty lastTrainingMaterial.category.parentTMC}">
+                                        ${lastTrainingMaterial.category.TMCName}
+                                    </c:if></div>
+                                    <div class="z_r1"><span
+                                            class="z_r22">${fn:substring(lastTrainingMaterial.createDate,0,10)}</span><span
+                                            class="z_r2">New</span></div>
+                                </li>
+                            </c:forEach>
                         </c:if>
                         <c:if test="${lastTrainingMaterials.size() <= 0}">
-                            <li>没有新增资料......</li>
+                            <li class="z_l1" style="font-weight: bold">没有内容......</li>
                         </c:if>
-                        						
-						</ul>
-					</div>
-					<!--下边花朵-->
-					<img class="bottom_flower" src="image/problem/bfl.png" />
-					<div ><iframe id="mainFrame" onload="setIframeHeight(this)" scrolling="no"  frameborder="0"></iframe></div>
-					<!--右边内容下框-->
-					<div class="right_b2" id="right_b2">
-					<img src="image/problem/bborder.png">
-					</div>
-					
-					</div>
-					<div class="foot" id="Foot">
-			<p id="copy">版权所有&nbsp;&nbsp;&nbsp;2016-2026&nbsp;&nbsp;&nbsp;锡万达城投资有限责任公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				联系号码：0000-0000000&nbsp;&nbsp;&nbsp;邮箱：100000qq.com    </p>
-		</div>
-		</div>
-			</div>
-			
-		</div>
-		
-		</div>
-		
-	</body>
 
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/mobile/jquery.min.js"></script>
+<script type="text/javascript" src="js/mobile/flexible.js"></script>
+<script type="text/javascript" src="js/mobile/iscroll.js"></script>
+<script type="text/javascript" src="js/mobile/navbarscroll.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //demo示例六 通过id调取
+        $('#demo06').navbarscroll({
+            defaultSelect: 4,
+            scrollerWidth: 6,
+            fingerClick: 1,
+            endClickScroll: function (obj) {
+                console.log(obj.text())
+            }
+        });
+
+        //动态生成目录
+        var contents = '';
+        var img_index;
+        $.each(${firstLevelTMC}, function (index, firstLevel) {
+            img_index = index % 11 + 1;
+            if (index >= 7) {
+                //更多
+                img_index += 1;
+            }
+            contents += '<li><a href="searchTrainingMaterial_searchTrainingMaterialsByCategory?pageSize=${pageSize}&TMCId=' + firstLevel.TMCId + '&currentPage=1">' +
+                '<div class="z_ba1"><img src="image/mobile/j' + img_index + '.png"></div><div class="z_ba2">'+firstLevel.TMCName+'</div></a></li>';
+
+        });
+        $("#menu_ul").append(contents);
+
+//        $("#zxx").click(function(){
+//            $('#zxx').removeClass('zx').addClass('yc');
+//            $('#zxx').nextAll().removeClass('yc').addClass('zx');
+//        });
+
+    });
+
+    function checkForm() {
+        if($("#searchContent").val() == ''){
+            alert('请输入内容！');
+            return false;
+        }
+    }
+</script>
+</body>
 </html>

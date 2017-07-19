@@ -69,7 +69,7 @@
                                     <div class="z_zl1">
                                         <div class="z_zl21">${signMaterial.category.parentTMC.TMCName}</div>
                                         <div class="z_zl22">${signMaterial.category.TMCName}</div>
-                                        <div class="z_zl23">${signMaterial.createDate}</div>
+                                        <div class="z_zl23">${fn:substring(signMaterial.createDate,0,10)}</div>
 
                                     </div>
                                     <div class="z_zl1">
@@ -135,7 +135,7 @@
             //生成二级目录
             $.each(${secondLevelTMC}, function (index, secondLevel) {
                 if (secondLevel.parentTMC.TMCId == firstLevel.TMCId) {
-                    contents_second += '<li><a href="">' + secondLevel.TMCName + '</a></li>';
+                    contents_second += '<li class="z_ba2"><a href="searchSignMaterial_searchSignMaterialsByCategory?pageSize=${pageSize}&TMCId='+secondLevel.TMCId+'&currentPage=1" >' + secondLevel.TMCName + '</a></li>';
                 }
             });
             contents_second += '</ul>';

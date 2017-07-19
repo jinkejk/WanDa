@@ -1,5 +1,6 @@
 package com.wanda.action;
 
+import java.io.IOException;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +9,10 @@ import java.util.List;
 import java.util.Set;
 
 import javax.annotation.Resource;
+
+import com.wanda.util.IsMobile;
+import com.wanda.util.UtilCommon;
+import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.ActionContext;
@@ -118,24 +123,30 @@ public class SearchTrainingMaterial extends ActionSupport {
 	/**
 	 * 按照内容分页搜索培训资料
 	 */
-	public String searchTMBycontent(){
+	public String searchTMBycontent() throws IOException {
 		//设置默认值
 		if(pageSize == 0 || currentPage ==0){
 			pageSize = 10;
 			currentPage = 1;
 		}
 		//去掉首尾空格,且替换多个空格为一个
-		if(searchContent==null || searchContent.isEmpty()){
+		if((searchContent==null || searchContent.isEmpty()) && !IsMobile.check(ServletActionContext.getRequest())){
 			return searchTMByPage();
 		}
 		//去掉首尾空格,且替换多个空格为一个
-		searchContent = searchContent.trim().replaceAll("\\s+", " ");		
+		searchContent = searchContent.trim().replaceAll("\\s+", " ");
+		List<TrainingMaterial> trainingMaterials = null;
+		int trainingMaterialNum = 0;
 
-		//分页获得培训资料
-		List<TrainingMaterial> trainingMaterials = trainingMaterialService.getTrainingMaterialByContentByPage(searchContent, pageSize, currentPage);
+		try {
+			//分页获得培训资料
+			trainingMaterials = trainingMaterialService.getTrainingMaterialByContentByPage(searchContent, pageSize, currentPage);
 
-		//获得总共的培训资料数目
-		int trainingMaterialNum = trainingMaterialService.getTotalTrainingMaterialNumByContent(searchContent).intValue();		
+			//获得总共的培训资料数目
+			trainingMaterialNum = trainingMaterialService.getTotalTrainingMaterialNumByContent(searchContent).intValue();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		//计算总页数
 		int totalPage = (int)Math.ceil((double)trainingMaterialNum/pageSize);
@@ -171,7 +182,22 @@ public class SearchTrainingMaterial extends ActionSupport {
 		ActionContext.getContext().put("totalPage", totalPage);
 		ActionContext.getContext().put("titleList", titleList);
 
-		return flag==1? "trainingMaterial_frame":"showTMList";
+		if(IsMobile.check(ServletActionContext.getRequest())){
+			//查询一级二级目录
+			List<TrainingMaterialsCategory> firstLevelTMC = null;
+			try {
+				firstLevelTMC = trainingMaterialsCategoryService.getAllFirstLevelTMCByModule("training");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			ActionContext.getContext().put("firstLevelTMC", UtilCommon.listToJson(firstLevelTMC));
+			ActionContext.getContext().put("lastTrainingMaterials", trainingMaterials);
+			ActionContext.getContext().put("titleList", titleList);
+			return "lastTrainingMaterials_mobile";
+		}else{
+			return flag==1? "trainingMaterial_frame":"showTMList";
+		}
 	}
 
 	/**
@@ -213,6 +239,20 @@ public class SearchTrainingMaterial extends ActionSupport {
 		ActionContext.getContext().put("totalPage", totalPage);
 		ActionContext.getContext().put("titleList", titleList);
 
-		return "trainingMaterial_frame";
+		if(IsMobile.check(ServletActionContext.getRequest())){
+			//查询一级二级目录
+			List<TrainingMaterialsCategory> firstLevelTMC = null;
+			try {
+				firstLevelTMC = trainingMaterialsCategoryService.getAllFirstLevelTMCByModule("training");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			ActionContext.getContext().put("firstLevelTMC", UtilCommon.listToJson(firstLevelTMC));
+			ActionContext.getContext().put("lastTrainingMaterials", trainingMaterials);
+			return "lastTrainingMaterials_mobile";
+		}else {
+			return "trainingMaterial_frame";
+		}
 	}
 }

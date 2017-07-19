@@ -42,7 +42,7 @@ public class IsMobile {
         // 匹配
         Matcher matcherPhone = phonePat.matcher(userAgent);
         Matcher matcherTable = tablePat.matcher(userAgent);
-        if (matcherPhone.find() || matcherTable.find()) {
+        if (matcherPhone.find()) {
             return true;
         } else {
             return false;

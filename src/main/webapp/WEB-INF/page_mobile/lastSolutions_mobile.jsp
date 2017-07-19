@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 
 <!doctype html>
 <html>
@@ -59,7 +58,7 @@
                                 <li>
                                     <div class="zx_l1">
                                         <a href="searchSolution_searchSolutionById?solutionId=${solution.solutionId}"
-                                           target="_blank" style="color: #000">${solution.title}</a>
+                                           style="color: #000">${solution.title}</a>
                                     </div>
                                     <div class="zx_l2">
                                         <c:if test="${!empty solution.category.parentTMC}">

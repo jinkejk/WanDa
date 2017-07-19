@@ -141,13 +141,19 @@ public class SearchSignMaterial extends ActionSupport{
 			return searchSMByPage();
 		}
 		//去掉首尾空格,且替换多个空格为一个
-		searchContent = searchContent.trim().replaceAll("\\s+", " ");		
+		searchContent = searchContent.trim().replaceAll("\\s+", " ");
+		List<SignMaterial> signMaterials = null;
+		int signMaterialNum = 0;
 
-		//分页获得培训资料
-		List<SignMaterial> signMaterials = signMaterialService.getSignMaterialByContentByPage(searchContent, pageSize, currentPage);
+		try {
+			//分页获得培训资料
+			signMaterials = signMaterialService.getSignMaterialByContentByPage(searchContent, pageSize, currentPage);
 
-		//获得总共的培训资料数目
-		int signMaterialNum = signMaterialService.getTotalSignMaterialNumByContent(searchContent).intValue();		
+			//获得总共的培训资料数目
+			signMaterialNum = signMaterialService.getTotalSignMaterialNumByContent(searchContent).intValue();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		//计算总页数
 		int totalPage = (int)Math.ceil((double)signMaterialNum/pageSize);
@@ -230,6 +236,23 @@ public class SearchSignMaterial extends ActionSupport{
 		ActionContext.getContext().put("totalPage", totalPage);
 		ActionContext.getContext().put("titleList", titleList);
 
+		if(IsMobile.check(ServletActionContext.getRequest())){
+			//查询一级二级目录
+			List<TrainingMaterialsCategory> allTMCs = trainingMaterialsCategoryService.getAllTMCByModule("sign", Integer.MAX_VALUE, 1);
+			List<TrainingMaterialsCategory> firstLevelTMC = trainingMaterialsCategoryService.getAllFirstLevelTMCByModule("sign");
+			List<TrainingMaterialsCategory> secondLevelTMC = new ArrayList<>();
+			if(allTMCs != null && allTMCs.size() > 0){
+				//划分成一级和二级目录
+				for(TrainingMaterialsCategory allTMC: allTMCs){
+					if(allTMC.getParentTMC()!=null)
+						secondLevelTMC.add(allTMC);
+				}
+			}
+			ActionContext.getContext().put("firstLevelTMC", UtilCommon.listToJson(firstLevelTMC));
+			ActionContext.getContext().put("secondLevelTMC", UtilCommon.listToJson(secondLevelTMC));
+			ActionContext.getContext().put("lastSignMaterials", signMaterials);
+			return "lastSignMaterials_mobile";
+		}
 		return "signMaterial_frame";
 	}
 }
