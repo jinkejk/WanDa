@@ -14,7 +14,7 @@
 <body>
 <div class="z_main">
 	<div class="z_center">
-		<div  class="z_top">培训内容</div>
+		<div  class="z_top"><a href="javascript:window.history.back();" class="z_topl"></a>培训内容</div>
 		<div class="l_bt"><p>${trainingMaterial.title}</p></div>
 		<div class="djl">
 			<div style="margin-left: 5%">点击率: ${trainingMaterial.clickNum}</div>
