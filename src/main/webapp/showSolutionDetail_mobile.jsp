@@ -18,6 +18,6 @@
 		<div class="con_pro">${solution.solution }</div>
 	</div>
 </div>
-<script type="text/javascript" src="js/flexible.js"></script>
+<script type="text/javascript" src="js/mobile/flexible.js"></script>
 </body>
 </html>

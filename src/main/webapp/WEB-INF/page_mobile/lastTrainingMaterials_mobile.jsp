@@ -60,12 +60,12 @@
                                         <c:if test="${!empty titleList}">${titleList[status.index]}</c:if>
                                         <c:if test="${empty titleList}">${lastTrainingMaterial.title}</c:if></a>
                                     </div>
-                                    <div class="zx_l2">
-                                        <c:if test="${!empty lastTrainingMaterial.category.parentTMC}">
-                                            ${lastTrainingMaterial.category.parentTMC.TMCName}
-                                        </c:if><c:if test="${empty lastTrainingMaterial.category.parentTMC}">
-                                        ${lastTrainingMaterial.category.TMCName}
-                                    </c:if></div>
+                                    <%--<div class="zx_l2">--%>
+                                        <%--<c:if test="${!empty lastTrainingMaterial.category.parentTMC}">--%>
+                                            <%--${lastTrainingMaterial.category.parentTMC.TMCName}--%>
+                                        <%--</c:if><c:if test="${empty lastTrainingMaterial.category.parentTMC}">--%>
+                                        <%--${lastTrainingMaterial.category.TMCName}--%>
+                                    <%--</c:if></div>--%>
                                     <div class="z_r1"><span
                                             class="z_r22">${fn:substring(lastTrainingMaterial.createDate,0,10)}</span><span
                                             class="z_r2">New</span></div>

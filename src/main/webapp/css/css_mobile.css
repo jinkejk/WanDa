@@ -492,6 +492,66 @@ a:hover{
 .bz{width:100%;overflow: hidden;text-align: left;font-size: 16px;font-family: 微软雅黑;margin: 15px 0;margin-left: 5%;}
 .nry{width:100%; margin-left:5%; overflow: hidden;}
 .zff{width:100%;overflow:hidden;margin: 15px 0;text-align: center;font-size: 16px;font-family: 微软雅黑;background: #fbfbfb;line-height: 28px; }
+/*index*/
+.l_top{
+	background:#fff;
+	width: 100%;
+	overflow: hidden;
+	background-size: cover;
+
+}
+.l_head{
+	height:40px;
+	line-height: 40px;
+	text-align: center;
+	width: 100%;
+	color: #fff;
+	position:relative;
+	font-size: 14px;
+	background: #3daae4;
+}
+.l_l{
+	position:absolute;
+	left:1%;
+	top:15%;
+	width: 30px;
+	height: 25px;
+}
+.l_l a{
+	width: 30px;
+	height:25px;
+	display: block;
+}
+.l_l a img{
+	width:15%;
+}
+.l_r{
+	position:absolute;
+	right:2%;
+	top:13%;
+	width: 30px;
+}
+.l_r a{
+	width: 30px;
+	display: block;
+}
+.l_r a img{
+	width:60%;
+}
+.l_tt{float:left;display: block;padding-top: 3%;margin-left: 20%;}
+.l_ww{float:left;display: block;margin-left: 2%;}
+.l_nr{width:100%;overflow: hidden;}
+.lnr{width:100%;overflow: hidden;}
+.lnr1{width:50%;float: left;overflow: hidden;}
+.lnr1 img{float:left;width: 100%;}
+.lnr2{width:50%;background: #70c1f6;text-align: center;float: left;height: 223px;}
+.lnr2 a p{color:#fff;font-size: 18px;line-height: 50px;}
+.lnr2 a img{padding-top:30%;width:40%;}
+.ls2{background:#eb524d;}
+.ls3{background:#ffb242;}
+.ls4{background:#bae16d;}
+.ls5{background:#f68251;}
+.ls6{background:#2ad6d3;}
 /*iphone6*/
 @media screen and (max-width: 375px) {
 	.z_topn1{margin-top:4px;}

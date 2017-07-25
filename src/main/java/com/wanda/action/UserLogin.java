@@ -3,9 +3,12 @@ package com.wanda.action;
 import java.util.Date;
 
 import javax.annotation.Resource;
+
+import com.wanda.util.IsMobile;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.ActionContext;
@@ -77,7 +80,7 @@ public class UserLogin extends ActionSupport{
 			user.setLastLogin(new Date());
 			userService.updateUser(user);
 			ActionContext.getContext().put("message", "登陆成功！");
-			return "success";
+			return IsMobile.check(ServletActionContext.getRequest())? "success_mobile":"success";
 		}catch(Exception e){
 			e.printStackTrace();
 			ActionContext.getContext().put("message", "用户名或密码错误！");

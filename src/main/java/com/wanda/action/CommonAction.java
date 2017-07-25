@@ -1128,4 +1128,16 @@ public class CommonAction extends ActionSupport{
 
 		return "";
 	}
+
+	/**
+	 * 显示首页
+	 * 因为要适配手机端
+	 */
+	public String showWelcomePage() throws IOException {
+		if(IsMobile.check(ServletActionContext.getRequest())){
+			return "input_mobile";
+		}else{
+			return "input";
+		}
+	}
 }
