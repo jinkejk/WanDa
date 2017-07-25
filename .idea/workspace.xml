@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="02aefe34-1292-4a7b-a64d-c0b53a067c49" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wanda/action/CommonAction.java" afterPath="$PROJECT_DIR$/src/main/java/com/wanda/action/CommonAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wanda/action/UserLogin.java" afterPath="$PROJECT_DIR$/src/main/java/com/wanda/action/UserLogin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/struts.xml" afterPath="$PROJECT_DIR$/src/main/resources/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastTrainingMaterials_mobile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastTrainingMaterials_mobile.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/showTrainingMaterialDetail_mobile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/showTrainingMaterialDetail_mobile.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/css_mobile.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/css_mobile.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/showSolutionDetail_mobile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/showSolutionDetail_mobile.jsp" />
-    </list>
+    <list default="true" readonly="true" id="02aefe34-1292-4a7b-a64d-c0b53a067c49" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -889,7 +880,7 @@
       <workItem from="1500366136330" duration="4079000" />
       <workItem from="1500428083089" duration="16885000" />
       <workItem from="1500517042573" duration="65000" />
-      <workItem from="1500962423419" duration="3302000" />
+      <workItem from="1500962423419" duration="3901000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1500257740904</created>
@@ -923,7 +914,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47070000" />
+    <option name="totallyTimeSpent" value="47669000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -935,7 +926,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
