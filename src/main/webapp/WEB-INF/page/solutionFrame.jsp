@@ -15,11 +15,11 @@
 					 alert("已经是最后一页了！");
 				 }else{
 					 //下一页
-					 window.location.href="searchSolution_searchSolutionByCategory?TMCId=${TMCId}&currentPage=${currentPage+1}&pageSize=${pageSize}";
+					 window.location.href="searchSolution_searchSolutionByCategory?TMCId=${TMCId}&currentPage=${currentPage+1}&pageSize=${pageSize}&searchContent=${searchContent}";
 				 }		 
 			 });
 			 $("#prePage").click(function(){
-				 if(${currentPage} <= 1){
+				 if(${currentPage <= 1}){
 					 alert("已经是第一页了！");
 				 }else{
 					 //上一页

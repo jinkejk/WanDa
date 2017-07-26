@@ -50,7 +50,7 @@
                         <input type="hidden" name="currentPage" value="1">
                         <input type="submit" id="z_topn">
                         <label for="z_topn" class="z_topn1"><img src="image/mobile/ss.png"></label>
-                        <input type="text" class="z_topn2" value="请输入你要搜索的内容" id="searchContent"
+                        <input type="text" class="z_topn2" value="${searchContent}" id="searchContent"
                                name="searchContent" onfocus="if(value=='请输入你要搜索的内容') {value=''}"
                                onblur="if (value=='') {value='请输入你要搜索的内容'}">
                     </form>
@@ -62,7 +62,10 @@
                             <c:forEach var="signMaterial" items="${lastSignMaterials}" varStatus="status">
                                 <li>
                                     <div class="z_zl1">
-                                        <div class="z_zl11">${signMaterial.title}</div>
+                                        <div class="z_zl11">
+                                            <c:if test="${!empty titleList}">${titleList[status.index]}</c:if>
+                                            <c:if test="${empty titleList}">${signMaterial.title}</c:if>
+                                        </div>
                                         <div class="z_zl12">下载次数：${signMaterial.clickNum }</div>
                                         <div class="z_zl13"><a href="#" onclick="downloadSignFile('${signMaterial.signFile}')"></a></div>
                                     </div>
@@ -90,8 +93,6 @@
 
 
         </div>
-
-
     </div>
 </div>
 
@@ -101,7 +102,6 @@
 <script type="text/javascript" src="js/mobile/navbarscroll.js"></script>
 <script type="text/javascript">
     $(function () {
-
         //demo示例六 通过id调取
         $('#demo06').navbarscroll({
             defaultSelect: 1,
@@ -123,12 +123,16 @@
         $.each(${firstLevelTMC}, function (index, firstLevel) {
             //动态生成一级目录
             var backgroud_id = index % 4 + 1;
-            if (index == 0) {
-                contents += '<li class="tab-active"><div class="zx_ba1 zx_' + backgroud_id + '">' + firstLevel.TMCName.substring(0, 1) + '</div><div class="zx_ba2">地块</div></li>';
+            <%--alert('${empty index ? 0:index}');--%>
+            if (index == ${empty index ? 0:index}) {
+                contents += '<li class="tab-active"><a href="searchSignMaterial_searchSignMaterialsByCategory?index='+index+'&pageSize=${pageSize}&TMCId='+firstLevel.TMCId+'&currentPage=1" style="color: #000">' +
+                    '<div class="zx_ba1 zx_' + backgroud_id + '">'
+                    + firstLevel.TMCName.substring(0, 1) + '</div><div class="zx_ba2">地块</div></a></li>';
                 contents_second += '<ul class="inner">'
             }
             else {
-                contents += '<li><div class="zx_ba1 zx_' + backgroud_id + '">' + firstLevel.TMCName.substring(0, 1) + '</div><div class="zx_ba2">地块</div></li>';
+                contents += '<li><a href="searchSignMaterial_searchSignMaterialsByCategory?index='+index+'&pageSize=${pageSize}&TMCId='+firstLevel.TMCId+'&currentPage=1" style="color: #000"><div class="zx_ba1 zx_'
+                    + backgroud_id + '">' + firstLevel.TMCName.substring(0, 1) + '</div><div class="zx_ba2">地块</div></a></li>';
                 contents_second += '<ul class="inner" style="display:none">'
             }
 
@@ -173,6 +177,7 @@
                 console.log(obj.text())
             }
         });
+
     });
 
     //点击搜索按钮

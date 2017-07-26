@@ -191,6 +191,24 @@ public class SearchSignMaterial extends ActionSupport{
 
 		if(IsMobile.check(ServletActionContext.getRequest())){
 			//手机端
+			//查询一级二级目录
+			List<TrainingMaterialsCategory> allTMCs = trainingMaterialsCategoryService.getAllTMCByModule("sign", Integer.MAX_VALUE, 1);
+			List<TrainingMaterialsCategory> firstLevelTMC = trainingMaterialsCategoryService.getAllFirstLevelTMCByModule("sign");
+			List<TrainingMaterialsCategory> secondLevelTMC = new ArrayList<>();
+			if(allTMCs != null && allTMCs.size() > 0){
+				//划分成一级和二级目录
+				for(TrainingMaterialsCategory allTMC: allTMCs){
+					if(allTMC.getParentTMC()!=null)
+						secondLevelTMC.add(allTMC);
+				}
+			}
+			ActionContext.getContext().put("firstLevelTMC", UtilCommon.listToJson(firstLevelTMC));
+			ActionContext.getContext().put("secondLevelTMC", UtilCommon.listToJson(secondLevelTMC));
+			ActionContext.getContext().put("lastSignMaterials", signMaterials);
+			ActionContext.getContext().put("signMaterialNum", signMaterialNum);
+			ActionContext.getContext().put("totalPage", totalPage);
+			ActionContext.getContext().put("titleList", titleList);
+
 			return "showSMList_mobile";
 		}else{
 			return flag==1? "signMaterial_frame":"showSMList";
@@ -200,6 +218,16 @@ public class SearchSignMaterial extends ActionSupport{
 	/**
 	 * 分类搜索解决签批资料
 	 */
+	private int index;
+
+	public int getIndex() {
+		return index;
+	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
 	public String searchSignMaterialsByCategory() throws Exception {
 		//设置默认值
 		if(pageSize == 0 || currentPage ==0){
@@ -251,6 +279,7 @@ public class SearchSignMaterial extends ActionSupport{
 			ActionContext.getContext().put("firstLevelTMC", UtilCommon.listToJson(firstLevelTMC));
 			ActionContext.getContext().put("secondLevelTMC", UtilCommon.listToJson(secondLevelTMC));
 			ActionContext.getContext().put("lastSignMaterials", signMaterials);
+			ActionContext.getContext().put("index", index);
 			return "lastSignMaterials_mobile";
 		}
 		return "signMaterial_frame";
