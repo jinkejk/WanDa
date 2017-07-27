@@ -478,13 +478,13 @@ a:hover{
 .tab-active .zx_ba2{
 	border-bottom: 2px solid red;
 }
-.fy{width:65%;margin: 0 auto;overflow: hidden;margin-top: 15px;padding-bottom: 15px;}
+.fy{overflow: hidden;margin-top: 5px;padding: 0 0 15px 10%;}
 .f3{float: left;font-size:15px;line-height: 22px;color: #8e8e8e;margin-left: 6px;}
 .z_input2{float:left;margin-left: 10px;margin-top: 8px; width:35px;height: 25px;border:2px #ececec solid;border-radius: 5px;text-align: center; font-size:14px;font-family: Times New Roman;}
 .fy input{width:40px;line-height: 22px;text-align: center;font-size:14px;font-family: Times New Roman;color: #8e8e8e; border-radius: 5px;margin-left: 6px;float: left;border: 1px #e3e3e3 solid;}
 .f2y{width: 50px;text-align: center;float: left;margin-left: 6px;margin-top: 1px;}
 .f2y a{width: 50px;height: 22px; border: 1px #e2e2e2 solid;border-radius: 5px;text-align: center;float: left;font-size:13px;line-height: 22px;color: #333333;}
-.fyy{width:100%;overflow: hidden;margin-top: 10px;}
+.fyy{width:100%;overflow: hidden;margin-top: 5px;}
 .ffy a:hover{width:37px;height: 27px;background: #1daa4e; border: 1px #1daa4e solid;border-radius: 5px;text-align: center;float: left;font-size:13px;line-height: 30px;color: #ffffff;font-family: Times New Roman;margin-top: 2px;}
 .l_bt{font-size:18px;font-family: 微软雅黑;text-align: center;margin-top: 15px;padding-bottom: 10px;font-weight: bold;}
 .djl{width:100%;overflow: hidden;font-size: 16px;font-family: 微软雅黑;margin: 10px 0;white-space: nowrap;}
@@ -553,16 +553,25 @@ a:hover{
 .ls5{background:#f68251;}
 .ls6{background:#2ad6d3;}
 /*iphone6*/
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 385px) {
 	.z_topn1{margin-top:4px;}
-	.fy{width:69%;}
+	.l_tt{padding-top:3.5%;margin-left: 19%;}
+	.l_ww{margin-left:1%;}
+	.lnr2{height:202px;}
+	.fy{padding:0 0% 25px 10%;}
 }
 /*iphone5*/
 @media screen and (max-width: 320px) {
 	.z_topn1{margin-top:3px;}
 	.zx_list21 form{width:46%}
 	.z_list21 form {width:46%;}
-	.fy{width:80%;}
 	.zff{font-size:14px;line-height: 26px;}
 	.djl{font-size:14px;}
+	.l_tt{margin-left:14%;padding-top: 4%;}
+	.l_ww{margin-left:1%;}
+	.lnr2{height:172px;}
+	.fy{padding:0 9% 15px 9%;}
+	.fy input{font-size:12px;line-height: 20px;}
+	.f2y a{font-size:12px;line-height: 20px;}
+	.f3{font-size:13px;}
 }

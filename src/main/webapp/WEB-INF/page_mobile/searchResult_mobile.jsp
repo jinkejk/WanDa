@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>成本</title>
+    <title>查询结果</title>
     <link rel="stylesheet" href="css/css_mobile.css">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
 </head>
@@ -44,8 +44,7 @@
                         <input type="submit" id="z_topn" value="搜索" class="search_submit">
                         <label for="z_topn" class="z_topn1"><img src="image/mobile/ss.png"></label>
                         <input type="text" class="z_topn2" id="searchContent" name="searchContent"
-                               value="${searchContent}" onfocus="if(value=='请输入你要搜索的内容') {value=''}"
-                               onblur="if (value=='') {value='请输入你要搜索的内容'}">
+                               value="${searchContent}">
                     </form>
                 </div>
 
@@ -110,7 +109,7 @@
             else
             {
                 //下一页
-                if ($("#searchContent") == '')
+                if ($("#searchContent").val() == '')
                     window.location.href = "searchSolution_searchSolutionByCategory?TMCId=${TMCId}&currentPage=${currentPage+1}&pageSize=${pageSize}&searchContent=${searchContent}";
                 else
                     window.location.href = "searchSolution_searchSolutionByContent?currentPage=${currentPage+1}&pageSize=${pageSize}&searchContent=${searchContent}";
@@ -120,7 +119,7 @@
             if ($("#pageNum").val() ==${currentPage})
                 return;
             if ($("#pageNum").val() >= 1 && $("#pageNum").val() <= ${totalPage}) {
-                if ($("#searchContent") == '')
+                if ($("#searchContent").val() == '')
                     window.location.href = "searchSolution_searchSolutionByCategory?TMCId=${TMCId}&pageSize=${pageSize}&searchContent=${searchContent}&currentPage=" + $("#pageNum").val();
                 else
                     window.location.href = "searchSolution_searchSolutionByContent?currentPage="+ $("#pageNum").val()+"&pageSize=${pageSize}&searchContent=${searchContent}";
@@ -133,7 +132,7 @@
                 alert("已经是第一页了！");
             } else {
                 //上一页
-                if ($("#searchContent") == '')
+                if ($("#searchContent").val() == '')
                     window.location.href = "searchSolution_searchSolutionByCategory?TMCId=${TMCId}&currentPage=${currentPage-1}&pageSize=${pageSize}&searchContent=${searchContent}";
                 else
                     window.location.href = "searchSolution_searchSolutionByContent?currentPage=${currentPage-1}&pageSize=${pageSize}&searchContent=${searchContent}";

@@ -93,6 +93,7 @@
 	            /operateSolution_uploadSolution*=perms["addSolution"]
 	            /operateSolution_deleteSolutionById*=perms["deleteSolution"]
 	            /searchSolution_searchSolutionByPage*=perms["showSolution"]
+	            /searchSolution*=perms["showSolution"]
 	            /commonAction_showSolutionList*=perms["showSolution"]
 	            /commonAction_updateSolution*=perms["editSolution"]
 	            /commonAction_showUserList*=perms["showUser"]

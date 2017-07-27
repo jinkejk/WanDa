@@ -193,8 +193,7 @@ public class SearchTrainingMaterial extends ActionSupport {
 
 			ActionContext.getContext().put("firstLevelTMC", UtilCommon.listToJson(firstLevelTMC));
 			ActionContext.getContext().put("lastTrainingMaterials", trainingMaterials);
-			ActionContext.getContext().put("titleList", titleList);
-			return "lastTrainingMaterials_mobile";
+			return "searchResultTM_mobile";
 		}else{
 			return flag==1? "trainingMaterial_frame":"showTMList";
 		}
@@ -250,7 +249,7 @@ public class SearchTrainingMaterial extends ActionSupport {
 
 			ActionContext.getContext().put("firstLevelTMC", UtilCommon.listToJson(firstLevelTMC));
 			ActionContext.getContext().put("lastTrainingMaterials", trainingMaterials);
-			return "lastTrainingMaterials_mobile";
+			return "searchResultTM_mobile";
 		}else {
 			return "trainingMaterial_frame";
 		}

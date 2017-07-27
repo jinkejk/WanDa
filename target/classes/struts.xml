@@ -75,10 +75,11 @@
             <result name="showTMList">WEB-INF/page/showTrainingMaterialList.jsp</result>
             <result name="trainingMaterial_frame">WEB-INF/page/trainingMaterialsFrame.jsp</result>
             <result name="lastTrainingMaterials_mobile">WEB-INF/page_mobile/lastTrainingMaterials_mobile.jsp</result>
+            <result name="searchResultTM_mobile">WEB-INF/page_mobile/searchResultTM_mobile.jsp</result>
         </action>
         <action name="searchSignMaterial_*" class="SearchSignMaterial" method="{1}">
             <result name="showSMList">WEB-INF/page/showSignMaterialsList.jsp</result>       
-            <result name="showSMList_mobile">WEB-INF/page_mobile/lastSignMaterials_mobile.jsp</result>
+            <result name="showSMList_mobile">WEB-INF/page_mobile/searchResultSM_mobile.jsp</result>
             <result name="signMaterial_frame">WEB-INF/page/signMaterialsFrame.jsp</result>
             <result name="lastSignMaterials_mobile">WEB-INF/page_mobile/lastSignMaterials_mobile.jsp</result>
         </action>

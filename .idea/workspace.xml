@@ -3,9 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="02aefe34-1292-4a7b-a64d-c0b53a067c49" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wanda/action/SearchSignMaterial.java" afterPath="$PROJECT_DIR$/src/main/java/com/wanda/action/SearchSignMaterial.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/wanda/action/SearchTrainingMaterial.java" afterPath="$PROJECT_DIR$/src/main/java/com/wanda/action/SearchTrainingMaterial.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/beans.xml" afterPath="$PROJECT_DIR$/src/main/resources/beans.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/struts.xml" afterPath="$PROJECT_DIR$/src/main/resources/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/signMaterialsFrame.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/signMaterialsFrame.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/trainingMaterialsFrame.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/trainingMaterialsFrame.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastSignMaterials_mobile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastSignMaterials_mobile.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastTrainingMaterials_mobile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastTrainingMaterials_mobile.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/searchResult_mobile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/searchResult_mobile.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/jquery.hovertree.0.1.2.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/jquery.hovertree.0.1.2.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/jquery.hovertree.0.1.2.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.hovertree.0.1.2.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/css.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/css/css_mobile.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/css_mobile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/beans.xml" afterPath="$PROJECT_DIR$/target/classes/beans.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="191">
-              <caret line="80" column="43" lean-forward="false" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="43" />
+              <caret line="77" column="90" lean-forward="false" selection-start-line="77" selection-start-column="90" selection-end-line="77" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -55,10 +64,10 @@
       <file leaf-file-name="lastSignMaterials_mobile.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastSignMaterials_mobile.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1080">
-              <caret line="125" column="54" lean-forward="true" selection-start-line="125" selection-start-column="54" selection-end-line="125" selection-end-column="54" />
+            <state relative-caret-position="281">
+              <caret line="142" column="116" lean-forward="false" selection-start-line="142" selection-start-column="116" selection-end-line="142" selection-end-column="137" />
               <folding>
-                <marker date="1501046371629" expanded="true" signature="6346:6358" ph="..." />
+                <marker date="1501132838459" expanded="true" signature="6383:6395" ph="..." />
               </folding>
             </state>
           </provider>
@@ -67,25 +76,43 @@
       <file leaf-file-name="SearchSignMaterial.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/wanda/action/SearchSignMaterial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="281" column="57" lean-forward="false" selection-start-line="281" selection-start-column="52" selection-end-line="281" selection-end-column="57" />
+            <state relative-caret-position="64">
+              <caret line="283" column="0" lean-forward="false" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
               <folding>
-                <element signature="e#4246#4254#0" expanded="true" />
-                <element signature="e#6278#6279#0" expanded="true" />
-                <element signature="e#6297#6298#0" expanded="true" />
-                <element signature="e#6333#6334#0" expanded="true" />
-                <element signature="e#6358#6359#0" expanded="true" />
+                <element signature="e#5161#5169#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="searchResult_mobile.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchTrainingMaterial.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/wanda/action/SearchTrainingMaterial.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchResult_mobile.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/searchResult_mobile.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+            <state relative-caret-position="300">
+              <caret line="134" column="45" lean-forward="false" selection-start-line="134" selection-start-column="45" selection-end-line="134" selection-end-column="45" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="searchResultSM_mobile.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/searchResultSM_mobile.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="148" column="138" lean-forward="false" selection-start-line="148" selection-start-column="138" selection-end-line="148" selection-end-column="138" />
+              <folding>
+                <marker date="1501133057454" expanded="true" signature="6592:6604" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,8 +120,8 @@
       <file leaf-file-name="css_mobile.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/css_mobile.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="481" column="36" lean-forward="false" selection-start-line="481" selection-start-column="36" selection-end-line="481" selection-end-column="36" />
+            <state relative-caret-position="-80">
+              <caret line="560" column="22" lean-forward="false" selection-start-line="560" selection-start-column="22" selection-end-line="560" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -126,7 +153,9 @@
       <find>firstPage</find>
       <find>keleyihovertree</find>
       <find>f2</find>
+      <find>stylesheet</find>
       <find>fy</find>
+      <find>searchContent</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,14 +177,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/css/pub.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/searchResult.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/lastTrainingMaterials.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/trainingMaterialsFrame.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/wanda/action/DownUtilAction.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/lastSignMaterials.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/问题档案库-子分类-内容页.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastSolutions_mobile.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wanda/action/SearchTrainingMaterial.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/wanda/util/IsMobile.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastTrainingMaterials_mobile.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/generic/web/viewer.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/generic/web/viewer_mobile.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
@@ -165,17 +191,25 @@
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index_mobile.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/wanda/action/UserLogin.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/struts.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/showTrainingMaterialDetail_mobile.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/showSolutionDetail_mobile.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/solutionFrame.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/wanda/action/SearchSolution.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wanda/action/SearchSignMaterial.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastSignMaterials_mobile.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/jquery.hovertree.0.1.2.min.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/jquery.hovertree.0.1.2.min.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/beans.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/css.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/signMaterialsFrame.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/css_mobile.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/trainingMaterialsFrame.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/struts.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastTrainingMaterials_mobile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wanda/action/SearchTrainingMaterial.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/searchResultTM_mobile.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/searchResult_mobile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/wanda/action/SearchSignMaterial.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastSignMaterials_mobile.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/searchResultSM_mobile.jsp" />
       </list>
     </option>
   </component>
@@ -230,9 +264,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -493,6 +527,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WanDa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WanDa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wanda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -509,16 +573,16 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\workspace\WanDa\src\main\webapp\WEB-INF\page_mobile" />
+      <recent name="H:\workspace\WanDa\src\main\webapp\WEB-INF\page" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\workspace\WanDa\src\main\webapp\WEB-INF\page_mobile" />
       <recent name="H:\workspace\WanDa\src\main\webapp\css" />
       <recent name="H:\workspace\WanDa\src\main\webapp\image\mobile" />
       <recent name="H:\workspace\WanDa\src\main\webapp\js\mobile" />
       <recent name="H:\workspace\WanDa\src\main\webapp" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="H:\workspace\WanDa\src\main\webapp\WEB-INF\page_mobile" />
-      <recent name="H:\workspace\WanDa\src\main\webapp\WEB-INF\page" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.tomcat8.5">
@@ -956,7 +1020,8 @@
       <workItem from="1500428083089" duration="16885000" />
       <workItem from="1500517042573" duration="65000" />
       <workItem from="1500962423419" duration="7150000" />
-      <workItem from="1501031884659" duration="15085000" />
+      <workItem from="1501031884659" duration="15855000" />
+      <workItem from="1501119410624" duration="11898000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1500257740904</created>
@@ -997,7 +1062,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66003000" />
+    <option name="totallyTimeSpent" value="78671000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1010,7 +1075,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1025,14 +1090,14 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21232876" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2632375" sideWeight="0.48654708" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26701966" sideWeight="0.48654708" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27685326" sideWeight="0.50904393" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20499243" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24508321" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25718608" sideWeight="0.5134529" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2380137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26369864" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1057,7 +1122,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="36" />
+      <option name="time" value="41" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1066,82 +1131,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/image/mobile/fd.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/5f5c9d70/8e881f9a-c3fc-4bab-8147-c08504df733b/wanda.signmaterial">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/5f5c9d70/8e881f9a-c3fc-4bab-8147-c08504df733b/wanda.trainingmaterial">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/image/mobile/j12.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/lastSolutions.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/showTrainingMaterialDetail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="42" column="37" lean-forward="true" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/wanda/action/SearchTrainingMaterial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="251" column="65" lean-forward="false" selection-start-line="251" selection-start-column="44" selection-end-line="251" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastTrainingMaterials_mobile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="115" column="0" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/mobile/flexible.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1679">
-          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/generic/web/viewer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/generic/build/pdf.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-160071">
@@ -1243,7 +1232,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="146" column="24" lean-forward="false" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1297,14 +1285,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/showTrainingMaterialDetail_mobile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="91" lean-forward="false" selection-start-line="16" selection-start-column="91" selection-end-line="16" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/showSolutionDetail_mobile.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -1317,15 +1297,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="126" column="18" lean-forward="true" selection-start-line="117" selection-start-column="10" selection-end-line="126" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="476" column="0" lean-forward="true" selection-start-line="468" selection-start-column="0" selection-end-line="476" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1365,35 +1336,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
           <caret line="348" column="0" lean-forward="false" selection-start-line="348" selection-start-column="0" selection-end-line="348" selection-end-column="0" />
-          <folding>
-            <element signature="e#12983#12991#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="80" column="43" lean-forward="false" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastSignMaterials_mobile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1080">
-          <caret line="125" column="54" lean-forward="true" selection-start-line="125" selection-start-column="54" selection-end-line="125" selection-end-column="54" />
-          <folding>
-            <marker date="1501046371629" expanded="true" signature="6346:6358" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastSolutions_mobile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="113" column="52" lean-forward="true" selection-start-line="113" selection-start-column="52" selection-end-line="113" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1401,9 +1343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="51" column="11" lean-forward="true" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1411,7 +1350,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
           <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1427,37 +1365,166 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-146">
           <caret line="787" column="58" lean-forward="false" selection-start-line="787" selection-start-column="58" selection-end-line="787" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="95" column="31" lean-forward="false" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="543" column="31" lean-forward="false" selection-start-line="543" selection-start-column="31" selection-end-line="543" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/signMaterialsFrame.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1220">
+          <caret line="61" column="16" lean-forward="true" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/5f5c9d70/8e881f9a-c3fc-4bab-8147-c08504df733b/wanda.signmaterial">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/ognl/ognl/3.0.6/ognl-3.0.6.jar!/ognl/OgnlRuntime.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="498" column="0" lean-forward="false" selection-start-line="498" selection-start-column="0" selection-end-line="498" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/css_mobile.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="481" column="36" lean-forward="false" selection-start-line="481" selection-start-column="36" selection-end-line="481" selection-end-column="36" />
+        <state relative-caret-position="-80">
+          <caret line="560" column="22" lean-forward="false" selection-start-line="560" selection-start-column="22" selection-end-line="560" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/5f5c9d70/8e881f9a-c3fc-4bab-8147-c08504df733b/wanda.trainingmaterial">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/trainingMaterialsFrame.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="61" column="16" lean-forward="true" selection-start-line="50" selection-start-column="13" selection-end-line="61" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/showTrainingMaterialDetail_mobile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="16" column="91" lean-forward="false" selection-start-line="16" selection-start-column="91" selection-end-line="16" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastTrainingMaterials_mobile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="16" column="68" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="77" column="90" lean-forward="false" selection-start-line="77" selection-start-column="90" selection-end-line="77" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastSolutions_mobile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2140">
+          <caret line="113" column="52" lean-forward="true" selection-start-line="113" selection-start-column="52" selection-end-line="113" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/wanda/action/SearchSignMaterial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="281" column="57" lean-forward="false" selection-start-line="281" selection-start-column="52" selection-end-line="281" selection-end-column="57" />
+        <state relative-caret-position="64">
+          <caret line="283" column="0" lean-forward="false" selection-start-line="283" selection-start-column="0" selection-end-line="283" selection-end-column="0" />
           <folding>
-            <element signature="e#4246#4254#0" expanded="true" />
-            <element signature="e#6278#6279#0" expanded="true" />
-            <element signature="e#6297#6298#0" expanded="true" />
-            <element signature="e#6333#6334#0" expanded="true" />
-            <element signature="e#6358#6359#0" expanded="true" />
+            <element signature="e#5161#5169#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/searchResult_mobile.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+        <state relative-caret-position="300">
+          <caret line="134" column="45" lean-forward="false" selection-start-line="134" selection-start-column="45" selection-end-line="134" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/wanda/action/SearchTrainingMaterial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/searchResultTM_mobile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="149" column="44" lean-forward="false" selection-start-line="149" selection-start-column="44" selection-end-line="149" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/lastSignMaterials_mobile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="142" column="116" lean-forward="false" selection-start-line="142" selection-start-column="116" selection-end-line="142" selection-end-column="137" />
+          <folding>
+            <marker date="1501132838459" expanded="true" signature="6383:6395" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page_mobile/searchResultSM_mobile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="148" column="138" lean-forward="false" selection-start-line="148" selection-start-column="138" selection-end-line="148" selection-end-column="138" />
+          <folding>
+            <marker date="1501133057454" expanded="true" signature="6592:6604" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

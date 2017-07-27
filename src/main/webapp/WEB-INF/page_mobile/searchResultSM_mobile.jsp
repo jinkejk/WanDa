@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 
 <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>签批资料</title>
+    <title>搜索结果</title>
     <link rel="stylesheet" href="css/css_mobile.css">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
 </head>
@@ -17,7 +16,7 @@
 <div class="z_main">
     <div class="z_center">
         <div class="z_top"><a href="javascript:window.history.back();" class="z_topl"></a>
-            <div id="top_title">签批资料</div>
+            <div id="top_title">搜索结果</div>
         </div>
         <div class="wrapper02" id="demo06">
             <div class="scroller">
@@ -42,17 +41,15 @@
         </div>
 
         <div class="z_list">
-            <!--    	<div class="z_list1"><img src="img/jian.png"></div>-->
             <div class="z_list2">
-                <div class="z_list21">新增资料通知
-                    <form action="searchSignMaterial_searchSMBycontent" method="post">
+                <div class="z_list21">相关资料
+                    <form action="searchSignMaterial_searchSMBycontent" method="post" onsubmit="return checkForm()">
                         <input type="hidden" name="pageSize" value="${pageSize}">
                         <input type="hidden" name="currentPage" value="1">
                         <input type="submit" id="z_topn">
                         <label for="z_topn" class="z_topn1"><img src="image/mobile/ss.png"></label>
                         <input type="text" class="z_topn2" value="${searchContent}" id="searchContent"
-                               name="searchContent" onfocus="if(value=='请输入你要搜索的内容') {value=''}"
-                               onblur="if (value=='') {value='请输入你要搜索的内容'}">
+                               name="searchContent" >
                     </form>
                 </div>
 
@@ -92,6 +89,15 @@
             </div>
 
 
+        </div>
+    </div>
+    <div class="fy">
+        <div class="fyy">
+            <div class="f2y"><a href="javascript:void(0)" id="prePage">上一页</a></div>
+            <div class="f2y"><a href="javascript:void(0)" id="nextPage">下一页</a></div>
+            <input type="text" value="${currentPage}" id="pageNum">
+            <div class="f3">/${totalPage}页</div>
+            <div class="f2y"><a href="javascript:void(0)" id="go">跳转</a></div>
         </div>
     </div>
 </div>
@@ -179,10 +185,45 @@
             }
         });
 
+        $("#nextPage").click(function(){
+            if(${currentPage} >= ${totalPage}){
+                alert("已经是最后一页了！");
+            }else{
+                //下一页
+                if($("#searchContent").val() != '')
+                    window.location.href="searchSignMaterial_searchSMBycontent?flag=1&pageSize=${pageSize}&searchContent=${searchContent}&currentPage=${currentPage+1}";
+                else
+                    window.location.href="searchSignMaterial_searchSignMaterialsByCategory?TMCId=${TMCId}&currentPage=${currentPage+1}&pageSize=${pageSize}";
+            }
+        });
+        $("#prePage").click(function(){
+            if(${currentPage <= 1}){
+                alert("已经是第一页了！");
+            }else{
+                //上一页
+                if($("#searchContent").val() != '')
+                    window.location.href="searchSignMaterial_searchSMBycontent?flag=1&pageSize=${pageSize}&searchContent=${searchContent}&currentPage=${currentPage-1}";
+                else
+                    window.location.href="searchSignMaterial_searchSignMaterialsByCategory?TMCId=${TMCId}&currentPage=${currentPage-1}&pageSize=${pageSize}&searchContent=${searchContent}";
+            }
+        });
+        $("#go").click(function(){
+            if($("#pageNum").val()==${currentPage})
+                return;
+            if($("#pageNum").val()>=1 && $("#pageNum").val()<= ${totalPage}){
+                if($("#searchContent").val() != '')
+                    window.location.href="searchSignMaterial_searchSMBycontent?flag=1&pageSize=${pageSize}&searchContent=${searchContent}&currentPage=" + $("#pageNum").val();
+                else
+                    window.location.href="searchSignMaterial_searchSignMaterialsByCategory?TMCId=${TMCId}&pageSize=${pageSize}&searchContent=${searchContent}&currentPage=" + $("#pageNum").val();
+            }
+            else
+                alert("页码不正确！");
+        });
+
     });
 
     //点击搜索按钮
-    function search(){
+    function checkForm(){
         if($("#searchContent").val()=='') {
             alert('请输入内容！');
             return;

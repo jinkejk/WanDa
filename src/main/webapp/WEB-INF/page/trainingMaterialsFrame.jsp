@@ -22,7 +22,7 @@
 				 }		 
 			 });
 			 $("#prePage").click(function(){
-				 if(${currentPage} <= 1){
+				 if(${currentPage <= 1}){
 					 alert("已经是第一页了！");
 				 }else{
 					 //上一页

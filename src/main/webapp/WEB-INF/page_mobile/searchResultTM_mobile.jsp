@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>培训资料</title>
+    <title>查询结果</title>
     <link rel="stylesheet" href="css/css_mobile.css">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
 </head>
@@ -14,7 +14,7 @@
 <body>
 <div class="z_main">
     <div class="z_center">
-        <div class="z_top"><a href="javascript:window.history.back()" class="z_topl"></a> 资料培训</div>
+        <div class="z_top"><a href="javascript:window.history.back();" class="z_topl"></a>查询结果</div>
         <div class="wrapper02" id="demo06">
             <div class="scroller">
                 <ul class="clearfix">
@@ -36,16 +36,14 @@
         <div class="z_list">
             <div class="z_list1"><img src="image/mobile/jian.png"></div>
             <div class="z_list2">
-                <div class="z_list21">新增资料通知
+                <div class="z_list21">查询结果
                     <form action="searchTrainingMaterial_searchTMBycontent" onsubmit="return checkForm()">
                         <input type="submit" id="z_topn">
                         <input type="hidden" name="pageSize" value="${pageSize}">
                         <input type="hidden" name="currentPage" value="1">
                         <label for="z_topn" class="z_topn1"><img src="image/mobile/ss.png"></label>
-                        <input type="text" class="z_topn2" value="${searchContent}"
-                               id="searchContent" name="searchContent"
-                               onfocus="if(value=='请输入你要搜索的内容') {value=''}"
-                               onblur="if (value=='') {value='请输入你要搜索的内容'}">
+                        <input type="text" class="z_topn2" value="${searchContent}" id="searchContent"
+                               name="searchContent">
                     </form>
                 </div>
 
@@ -82,6 +80,15 @@
             </div>
         </div>
     </div>
+    <div class="fy">
+        <div class="fyy">
+            <div class="f2y"><a href="javascript:void(0)" id="prePage">上一页</a></div>
+            <div class="f2y"><a href="javascript:void(0)" id="nextPage">下一页</a></div>
+            <input type="text" value="${currentPage}" id="pageNum">
+            <div class="f3">/${totalPage}页</div>
+            <div class="f2y"><a href="javascript:void(0)" id="go">跳转</a></div>
+        </div>
+    </div>
 </div>
 <script type="text/javascript" src="js/mobile/jquery.min.js"></script>
 <script type="text/javascript" src="js/mobile/flexible.js"></script>
@@ -114,10 +121,40 @@
         });
         $("#menu_ul").append(contents);
 
-//        $("#zxx").click(function(){
-//            $('#zxx').removeClass('zx').addClass('yc');
-//            $('#zxx').nextAll().removeClass('yc').addClass('zx');
-//        });
+        $("#nextPage").click(function(){
+            if(${currentPage} >= ${totalPage}){
+                alert("已经是最后一页了！");
+            }else{
+                //下一页
+                if($("#searchContent").val() != '')
+                    window.location.href="searchTrainingMaterial_searchTMBycontent?flag=1&pageSize=${pageSize}&searchContent=${searchContent}&currentPage=${currentPage+1}";
+                else
+                    window.location.href="searchTrainingMaterial_searchTrainingMaterialsByCategory?TMCId=${TMCId}&currentPage=${currentPage+1}&pageSize=${pageSize}";
+            }
+        });
+        $("#prePage").click(function(){
+            if(${currentPage <= 1}){
+                alert("已经是第一页了！");
+            }else{
+                //上一页
+                if($("#searchContent").val() != '')
+                    window.location.href="searchTrainingMaterial_searchTMBycontent?flag=1&pageSize=${pageSize}&searchContent=${searchContent}&currentPage=${currentPage-1}";
+                else
+                    window.location.href="searchTrainingMaterial_searchTrainingMaterialsByCategory?TMCId=${TMCId}&currentPage=${currentPage-1}&pageSize=${pageSize}&searchContent=${searchContent}";
+            }
+        });
+        $("#go").click(function(){
+            if($("#pageNum").val()==${currentPage})
+                return;
+            if($("#pageNum").val()>=1 && $("#pageNum").val()<= ${totalPage}){
+                if($("#searchContent").val() != '')
+                    window.location.href="searchTrainingMaterial_searchTMBycontent?flag=1&pageSize=${pageSize}&searchContent=${searchContent}&currentPage=" + $("#pageNum").val();
+                else
+                    window.location.href="searchTrainingMaterial_searchTrainingMaterialsByCategory?TMCId=${TMCId}&pageSize=${pageSize}&searchContent=${searchContent}&currentPage=" + $("#pageNum").val();
+            }
+            else
+                alert("页码不正确！");
+        });
 
     });
 
